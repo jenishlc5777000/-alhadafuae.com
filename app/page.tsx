@@ -65,9 +65,9 @@ export default function Home() {
           </div>
           <p>Every brief has a history. Our job is to understand it clearly, make the right intervention, and leave the building stronger than we found it.</p>
         </div>
-        <div className="service-grid" data-reveal data-spotlight>
+        <div className="service-grid" data-spotlight>
           {services.map((s) => (
-            <article className="service-card" key={s.n}>
+            <article className="service-card" key={s.n} data-reveal>
               <div className="service-card-top"><span>{s.n}</span><Arrow /></div>
               <div><h3>{s.title}</h3><p>{s.text}</p></div>
               <div className="card-line" />

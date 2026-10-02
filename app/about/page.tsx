@@ -73,9 +73,9 @@ export default function AboutPage() {
           </div>
           <p>The way we work comes down to a few habits we never skip, on small repairs and large programmes alike.</p>
         </div>
-        <div className="service-grid" data-reveal>
+        <div className="service-grid" data-spotlight>
           {values.map((v) => (
-            <article className="service-card" key={v.n}>
+            <article className="service-card" key={v.n} data-reveal>
               <div className="service-card-top"><span>{v.n}</span><Arrow /></div>
               <div><h3>{v.title}</h3><p>{v.text}</p></div>
               <div className="card-line" />
