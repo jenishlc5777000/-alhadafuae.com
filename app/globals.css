@@ -80,7 +80,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .scroll-progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--red-bright); transform-origin: left; transform: scaleX(var(--progress, 0)); pointer-events: none }
 .brand { display: flex; align-items: center; gap: 11px; font-weight: 600; font-size: 16px; line-height: 1; letter-spacing: .13em; position: relative; z-index: 2 }
 .brand small { display: block; margin-top: 6px; font: 8px var(--mono); letter-spacing: .11em }
-.brand-logo { width: 34px; height: 39px; object-fit: contain; background: #fff; padding: 3px; transition: transform .45s var(--ease) }
+.brand-logo { width: auto; height: 40px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35)); transition: transform .45s var(--ease) }
 .brand:hover .brand-logo { transform: rotate(-8deg) scale(1.08) }
 .main-nav { display: flex; align-items: center; gap: clamp(20px, 2.6vw, 38px) }
 .main-nav a { position: relative; font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 6px 0; opacity: .82; transition: opacity .2s }
@@ -536,7 +536,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
   .header-cta { width: 44px; padding: 0; justify-content: center }
   .header-cta .arrow { line-height: 1; font-size: 17px }
   .brand { font-size: 14px; gap: 9px }
-  .brand-logo { width: 29px; height: 34px }
+  .brand-logo { height: 34px }
   .hero { min-height: 640px; max-height: none }
   .hero-content { transform: translateY(-36%) }
   .hero-title { font-size: clamp(48px, 14vw, 78px) }

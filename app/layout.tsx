@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   keywords: ["concrete restoration Dubai", "concrete repair Dubai", "structural strengthening Dubai", "concrete scanning Dubai", "building maintenance Dubai"],
   openGraph: { type: "website", locale: "en_AE", siteName: site.name, title: "Concrete Restoration Company in Dubai", description: "Practical restoration. Stronger buildings. Better outcomes." },
   alternates: { canonical: "/" },
-  icons: { icon: "/al-hadaf-logo.svg" },
 };
 
 export const viewport: Viewport = { themeColor: "#181413", width: "device-width", initialScale: 1 };

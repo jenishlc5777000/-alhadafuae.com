@@ -27,7 +27,10 @@ export default function SiteHeader() {
       setScrolled(window.scrollY > 40);
       headerRef.current?.style.setProperty("--progress", String(max > 0 ? Math.min(window.scrollY / max, 1) : 0));
     };
-    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      if (!frame) frame = requestAnimationFrame(update);
+    };
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
