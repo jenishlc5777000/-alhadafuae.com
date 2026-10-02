@@ -18,7 +18,7 @@ export default function ProjectsPage() {
         kicker="SELECTED PROJECTS"
         title={<>Work that<br /><em>stands up.</em></>}
         intro="Towers, hotels, warehouses and car parks. Each project began with a question about the concrete, and ended with a building in better shape."
-        image={images.site}
+        image={images.team}
         crumbs={[{ href: "/", label: "Home" }, { label: "Projects" }]}
         meta={<>{String(projects.length).padStart(2, "0")} CASE STUDIES<br />ACROSS DUBAI</>}
       />

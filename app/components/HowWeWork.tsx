@@ -7,12 +7,12 @@ import { img, images } from "../lib/content";
 const DURATION = 3200;
 
 const steps = [
-  { title: "Tell us what you see", time: "SAME-DAY REPLY", pop: "Send photos on WhatsApp. We reply the same day.", text: "Call, WhatsApp or send a few photos. We ask the right questions and book a visit that suits you.", gets: ["A quick first opinion", "A visit booked at your convenience"], image: images.plans },
-  { title: "Site inspection", time: "WITHIN 48 HOURS", pop: "An engineer visits to look, tap and measure.", text: "An engineer visits, looks closely, taps, measures and photographs every problem area.", gets: ["Crack and damage mapping", "Photos of every area of concern"], image: images.engineer },
-  { title: "Test & scan", time: "1–3 DAYS", pop: "Scans and tests reveal the real cause.", text: "Where needed we scan, core or test the concrete to find the real cause, not just the symptom.", gets: ["GPR scans and cover readings", "Carbonation and chloride results"], image: images.drawings },
-  { title: "Clear plan & quote", time: "FIXED PRICE", pop: "A plain report with a clear, fixed price.", text: "A simple report: what is wrong, the options, the cost and the timeline. No jargon.", gets: ["Plain-language report", "Method statement and fixed quote"], image: images.office },
-  { title: "Repair with care", time: "ON PROGRAMME", pop: "Our own crew repairs, checked at every stage.", text: "Our own crew carries out the work, phased around your building, with checks at every stage.", gets: ["Supervised, phased works", "Quality checks at hold points"], image: images.crew },
-  { title: "Handover & aftercare", time: "24/7 SUPPORT", pop: "Records, a care plan and support on call.", text: "Photos, test results and a maintenance plan. We stay on call if anything changes.", gets: ["As-built records and test results", "A simple maintenance plan"], image: images.tower },
+  { title: "Tell us what you see", time: "SAME-DAY REPLY", pop: "Send photos on WhatsApp. We reply the same day.", text: "Call, WhatsApp or send a few photos. We ask the right questions and book a visit that suits you.", gets: ["A quick first opinion", "A visit booked at your convenience"], image: images.portrait },
+  { title: "Site inspection", time: "WITHIN 48 HOURS", pop: "An engineer visits to look, tap and measure.", text: "An engineer visits, looks closely, taps, measures and photographs every problem area.", gets: ["Crack and damage mapping", "Photos of every area of concern"], image: images.inspect },
+  { title: "Test & scan", time: "1–3 DAYS", pop: "Scans and tests reveal the real cause.", text: "Where needed we scan, core or test the concrete to find the real cause, not just the symptom.", gets: ["GPR scans and cover readings", "Carbonation and chloride results"], image: images.survey },
+  { title: "Clear plan & quote", time: "FIXED PRICE", pop: "A plain report with a clear, fixed price.", text: "A simple report: what is wrong, the options, the cost and the timeline. No jargon.", gets: ["Plain-language report", "Method statement and fixed quote"], image: images.team },
+  { title: "Repair with care", time: "ON PROGRAMME", pop: "Our own crew repairs, checked at every stage.", text: "Our own crew carries out the work, phased around your building, with checks at every stage.", gets: ["Supervised, phased works", "Quality checks at hold points"], image: images.plaster },
+  { title: "Handover & aftercare", time: "24/7 SUPPORT", pop: "Records, a care plan and support on call.", text: "Photos, test results and a maintenance plan. We stay on call if anything changes.", gets: ["As-built records and test results", "A simple maintenance plan"], image: images.maintenance },
 ];
 
 export default function HowWeWork() {

@@ -20,7 +20,7 @@ export default function BlogPage() {
         kicker="FIELD JOURNAL"
         title={<>Notes from<br /><em>the job.</em></>}
         intro="Plain-language guidance on keeping concrete buildings healthy, written by the people who repair them."
-        image={images.plans}
+        image={images.corridor}
         crumbs={[{ href: "/", label: "Home" }, { label: "Blog" }]}
         meta={<>{String(posts.length).padStart(2, "0")} NOTES<br />UPDATED MONTHLY</>}
       />

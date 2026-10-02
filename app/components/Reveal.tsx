@@ -14,7 +14,7 @@ export default function Reveal() {
       if (reduce || !Number.isFinite(target)) { el.textContent = String(target); return; }
       const start = performance.now(), duration = 1600;
       const tick = (now: number) => {
-        const t = Math.min((now - start) / duration, 1);
+        const t = Math.min(Math.max((now - start) / duration, 0), 1);
         el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 4))));
         if (t < 1) requestAnimationFrame(tick);
       };

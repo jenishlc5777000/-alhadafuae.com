@@ -13,23 +13,27 @@ export const waLink = (text?: string) => `https://wa.me/${site.whatsapp}${text ?
 export const img = (id: string, w = 1600) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=82`;
 
 export const images = {
-  workers: "1504917595217-d4dc5ebe6122",
-  site: "1541888946425-d81bb19240f5",
-  concrete: "1460574283810-2aab119d8511",
-  engineer: "1589939705384-5185137a7f0f",
-  office: "1497366811353-6870744d04b2",
-  crew: "1504307651254-35680f356dfd",
-  plans: "1503387762-592deb58ef4e",
-  tower: "1486406146926-c627a92ad1ab",
-  dubai: "1512453979798-5ea266f8880c",
-  facade: "1487958449943-2429e8be8625",
-  frame: "1429497419816-9ca5cfb4571a",
-  rebar: "1531834685032-c34bf0d84c77",
-  structure: "1599707254554-027aeb4deacd",
+  pour: "1685464196387-854858ce0f4f",
+  team: "1626885930974-4b69aa21bbf9",
+  repair: "1673865641469-34498379d8af",
+  plaster: "1768839725085-829e6ac7ac26",
+  spray: "1632556891885-3864b59d8f74",
+  breaker: "1665631153909-ae7a1b6c137f",
+  cutter: "1685464196386-d27db832ba25",
+  drill: "1625562888409-14b30c2b17b5",
+  inspect: "1742112125567-3e8967bad60f",
+  survey: "1628158088791-89567a8e84ec",
+  rebar: "1635249578213-68b0aa67fdf7",
+  mesh: "1582540730843-f4418d96ccbe",
+  worker: "1622612023350-b15f063eabe6",
+  portrait: "1672748341520-6a839e6c05bb",
+  maintenance: "1659353588150-a9dff1059c54",
+  carpark: "1570003002183-382712de0b47",
+  corridor: "1607694434367-12adf196f305",
   warehouse: "1553413077-190dd305871c",
-  tools: "1558618666-fcd25c85cd64",
   hotel: "1541976590-713941681591",
-  drawings: "1581092918056-0c4c3acd3789",
+  facade: "1487958449943-2429e8be8625",
+  dubai: "1512453979798-5ea266f8880c",
 };
 
 export const services = [
@@ -75,8 +79,8 @@ export const projects: Project[] = [
     ],
     outcome: "The podium was handed back on programme with a documented repair map, so the owners now know exactly what was done and where to look at the next inspection.",
     results: [["1,850", "m² of soffit surveyed"], ["0", "days of full car park closure"], ["14", "weeks, survey to handover"]],
-    image: images.site,
-    gallery: [images.concrete, images.rebar, images.tower],
+    image: images.spray,
+    gallery: [images.plaster, images.repair, images.mesh],
   },
   {
     slug: "warehouse-column-strengthening",
@@ -97,7 +101,7 @@ export const projects: Project[] = [
     outcome: "The columns gained the required capacity with almost no change to their footprint, and racking installation started the week after handover.",
     results: [["24", "columns strengthened"], ["<10 mm", "added to each face"], ["100%", "pull-off tests passed"]],
     image: images.warehouse,
-    gallery: [images.structure, images.engineer, images.frame],
+    gallery: [images.rebar, images.inspect, images.worker],
   },
   {
     slug: "office-retrofit-scanning",
@@ -117,8 +121,8 @@ export const projects: Project[] = [
     ],
     outcome: "Every opening was cored without a single tendon strike, and the design team resolved conflicts before they became site problems.",
     results: [["312", "locations scanned"], ["0", "tendon strikes"], ["27", "clashes resolved on paper"]],
-    image: images.office,
-    gallery: [images.plans, images.engineer, images.tower],
+    image: images.survey,
+    gallery: [images.drill, images.inspect, images.corridor],
   },
   {
     slug: "live-hotel-core-cutting",
@@ -138,8 +142,8 @@ export const projects: Project[] = [
     ],
     outcome: "All openings were completed within the agreed hours, with no guest complaints logged against the works.",
     results: [["68", "cores and openings"], ["0", "guest complaints"], ["5", "weeks on programme"]],
-    image: images.hotel,
-    gallery: [images.tools, images.crew, images.dubai],
+    image: images.cutter,
+    gallery: [images.breaker, images.drill, images.hotel],
   },
   {
     slug: "facade-balcony-maintenance",
@@ -159,8 +163,8 @@ export const projects: Project[] = [
     ],
     outcome: "Emergency call-outs fell sharply and the association now plans maintenance spend a year ahead with confidence.",
     results: [["420", "units surveyed"], ["4", "planned repair cycles"], ["1", "clear annual budget"]],
-    image: images.facade,
-    gallery: [images.dubai, images.concrete, images.crew],
+    image: images.maintenance,
+    gallery: [images.dubai, images.plaster, images.facade],
   },
   {
     slug: "car-park-deck-protection",
@@ -180,8 +184,8 @@ export const projects: Project[] = [
     ],
     outcome: "The leaks stopped, the decks were protected against further chloride ingress, and tenants kept parking throughout.",
     results: [["6", "levels treated"], ["640", "linear metres of joints"], ["10", "weeks, level by level"]],
-    image: images.frame,
-    gallery: [images.site, images.rebar, images.tools],
+    image: images.carpark,
+    gallery: [images.spray, images.repair, images.corridor],
   },
 ];
 
@@ -208,7 +212,7 @@ export const posts: Post[] = [
     date: "2026-09-12",
     readTime: "6 min read",
     excerpt: "A close look at signs that deserve a proper site assessment.",
-    image: images.concrete,
+    image: images.repair,
     lead: "Almost every concrete building cracks. The useful question is not whether a crack exists, but what it is telling you about the structure behind it.",
     sections: [
       { id: "why-concrete-cracks", heading: "Why concrete cracks at all", paras: ["Concrete shrinks as it dries and moves with temperature. In Dubai, where surfaces can swing by more than 30°C between night and midday, that movement is constant. Fine, shallow cracks are often the material relieving stress, and many never grow.", "Problems start when cracks are caused by load, settlement or corroding reinforcement. Those cracks keep moving, and they usually get worse."] },
@@ -225,7 +229,7 @@ export const posts: Post[] = [
     date: "2026-08-21",
     readTime: "5 min read",
     excerpt: "Why the best intervention begins with an invisible investigation.",
-    image: images.drawings,
+    image: images.drill,
     lead: "Before a single core is drilled, the most valuable work on a project is often invisible: finding out exactly what is inside the concrete.",
     sections: [
       { id: "the-risk", heading: "The risk you cannot see", paras: ["Slabs and walls hide reinforcement, post-tensioned tendons, conduits and pipes. Cutting through the wrong one can mean structural damage, live electrical hazards or a flooded floor, followed by delays and difficult conversations."] },
@@ -258,7 +262,7 @@ export const posts: Post[] = [
     date: "2026-06-18",
     readTime: "6 min read",
     excerpt: "The chemistry behind spalling, and what it means for how repairs should be designed.",
-    image: images.rebar,
+    image: images.mesh,
     lead: "Healthy concrete protects the steel inside it. Most of the spalling we repair starts when that protection is lost.",
     sections: [
       { id: "passive-layer", heading: "The passive layer", paras: ["Fresh concrete is highly alkaline, which forms a thin protective film on the reinforcement. While that film survives, the steel barely corrodes, even in a harsh climate."] },
@@ -274,7 +278,7 @@ export const posts: Post[] = [
     date: "2026-05-09",
     readTime: "5 min read",
     excerpt: "How carbon fibre adds capacity to beams, slabs and columns, and when it is the right choice.",
-    image: images.structure,
+    image: images.rebar,
     lead: "Carbon fibre reinforced polymer, or CFRP, lets us add strength to an existing structure with very little added weight or thickness.",
     sections: [
       { id: "what-it-is", heading: "What it is", paras: ["CFRP is carbon fibre in sheet, strip or fabric form, bonded to concrete with structural epoxy. Once bonded, it works with the existing reinforcement to carry extra tension, or to confine columns."] },
@@ -290,7 +294,7 @@ export const posts: Post[] = [
     date: "2026-04-15",
     readTime: "4 min read",
     excerpt: "How to keep noise, dust and risk down when the building has to stay open.",
-    image: images.tools,
+    image: images.breaker,
     lead: "Hotels, offices and residential towers rarely close for works. Core cutting and demolition have to fit around the people inside.",
     sections: [
       { id: "plan-hours", heading: "Plan around people", paras: ["Agree work windows with operations from the start. The loudest tasks go into the quietest hours, and everyone affected knows what is happening and when."] },

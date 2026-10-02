@@ -4,6 +4,7 @@ import { PostCard, ProjectCard, Ticker } from "./components/Cards";
 import HeroVideo from "./components/HeroVideo";
 import HowWeWork from "./components/HowWeWork";
 import LocationSection from "./components/LocationSection";
+import WaySection from "./components/WaySection";
 import { Words } from "./components/Words";
 import { posts, projects, services } from "./lib/content";
 
@@ -40,22 +41,7 @@ export default function Home() {
 
       <Ticker items={["CONCRETE REPAIR", "STRUCTURAL STRENGTHENING", "BUILDING MAINTENANCE", "CONCRETE SCANNING", "CORE CUTTING"]} />
 
-      <section className="statement" id="method">
-        <div className="section-no">/ 01</div>
-        <div>
-          <p className="kicker">THE AL HADAF WAY</p>
-          <h2 className="display">Look closer.<br /><em>Build confidence.</em></h2>
-        </div>
-        <div className="statement-copy">
-          <p>We work with a healthy respect for what is already there. Better questions at the start, accurate information on site, and restoration that earns its place in the life of a building.</p>
-          <Link className="under-link" href="/about">More about our approach <Arrow /></Link>
-        </div>
-        <div className="stat-row" data-reveal>
-          <div><strong><span data-count="50">50</span><sup>+</sup></strong><span>PROJECTS DELIVERED</span></div>
-          <div><strong>24<sup>/7</sup></strong><span>SUPPORT WHEN IT COUNTS</span></div>
-          <div><strong>01</strong><span>TEAM, FROM SURVEY TO HANDOVER</span></div>
-        </div>
-      </section>
+      <WaySection />
 
       <section className="capabilities" id="services">
         <div className="cap-top" data-reveal>

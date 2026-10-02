@@ -158,10 +158,6 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .ticker b { font-size: 14px; font-weight: 400 }
 
 /* ---------- Statement / method ---------- */
-.statement { position: relative; padding: 145px var(--gutter) 0; display: grid; grid-template-columns: .4fr 1.15fr 1fr; gap: 5vw }
-.statement .display em { color: var(--red); display: inline-block }
-.statement-copy { padding-top: 38px; position: relative }
-.statement-copy > p { margin: 0; color: #5a504d; line-height: 1.75; font-size: 16px; max-width: 400px }
 .stat-row { grid-column: 2 / -1; display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 108px; border-top: 1px solid var(--line); position: relative }
 .stat-row::after { content: ""; position: absolute; left: 0; top: -1px; height: 2px; width: 100%; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 1.4s var(--ease) .3s }
 .stat-row.is-visible::after { transform: scaleX(1) }
@@ -171,17 +167,9 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .stat-row strong { font: 500 53px var(--serif) }
 .stat-row sup { font: 16px var(--mono); color: var(--muted) }
 .stat-row > div > span { display: block; font: 9px var(--mono); color: var(--muted); letter-spacing: .1em; margin-top: 6px }
-@supports (animation-timeline: view()) {
-  #method::before { content: ""; position: absolute; left: var(--gutter); right: var(--gutter); top: 0; height: 3px; background: var(--red); transform-origin: left; animation: drawRule linear both; animation-timeline: view(); animation-range: entry 5% cover 24% }
-  #method .section-no { animation: technicalIn linear both; animation-timeline: view(); animation-range: entry 0% cover 25% }
-  #method h2 { animation: titleMask linear both; animation-timeline: view(); animation-range: entry 5% cover 32% }
-  #method h2 em { animation: italicRise linear both; animation-timeline: view(); animation-range: entry 15% cover 39% }
-  #method .statement-copy { animation: copySlide linear both; animation-timeline: view(); animation-range: entry 17% cover 42% }
-}
 
 /* ---------- Capabilities (dark card grid) ---------- */
 .capabilities { margin-top: 125px; padding: 112px var(--gutter); background: var(--night); color: #fff; position: relative }
-.statement + .capabilities { margin-top: 125px }
 .stats-band + .capabilities, .story + .capabilities { margin-top: 0 }
 .cap-top { display: grid; grid-template-columns: 1.25fr .6fr; gap: 13vw; align-items: end }
 .cap-top .kicker { color: #d9cec9 }
@@ -239,7 +227,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 /* ---------- Project band ---------- */
 .project-band { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 700px; background: var(--stone-2) }
 .project-image { position: relative; overflow: hidden; background: var(--night) }
-.project-image::before { content: ""; position: absolute; inset: -14% 0; background: linear-gradient(0deg, rgba(14, 9, 8, .35), transparent), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=82') center / cover; translate: 0 var(--parallax, 0px); will-change: translate }
+.project-image::before { content: ""; position: absolute; inset: -14% 0; background: linear-gradient(0deg, rgba(14, 9, 8, .35), transparent), url('https://images.unsplash.com/photo-1582540730843-f4418d96ccbe?auto=format&fit=crop&w=1400&q=82') center / cover; translate: 0 var(--parallax, 0px); will-change: translate }
 .project-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, .17) 48%, transparent 70%); transform: translateX(-120%); transition: transform .9s ease }
 .project-band:hover .project-image::after { transform: translateX(120%) }
 .image-label { position: absolute; top: 37px; left: 37px; color: #fff }
@@ -519,8 +507,6 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
   .main-nav { display: none }
   .menu-toggle { display: flex }
   .header-cta { border: 1px solid rgba(255, 255, 255, .28); border-radius: 999px; height: 44px; padding: 0 16px; gap: 10px; background: rgba(255, 255, 255, .05) }
-  .statement { grid-template-columns: 1fr 1fr; padding-top: 110px }
-  .statement .section-no { grid-column: 1 / -1 }
   .stat-row { grid-column: 1 / -1; margin-top: 70px }
   .cap-top { grid-template-columns: 1fr; gap: 24px }
   .project-grid.three { grid-template-columns: 1fr 1fr }
@@ -562,8 +548,6 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
   .scene-switcher button { width: auto; gap: 8px; padding: 8px }
   .scene-switcher button span { display: none }
   .ticker { padding: 11px 0 }
-  .statement { grid-template-columns: 1fr; padding-top: 90px; gap: 18px }
-  .statement-copy { padding-top: 6px }
   .stat-row { grid-template-columns: 1fr; margin-top: 50px }
   .stat-row div, .stat-row div:first-child { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line) }
   .capabilities { margin-top: 80px; padding: 80px var(--gutter) }
@@ -786,4 +770,158 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 @media (prefers-reduced-motion: reduce) {
   .js .service-card[data-reveal], .js .service-card[data-reveal]:nth-child(even) { opacity: 1; transform: none }
   .js .service-card[data-reveal] > * { opacity: 1 !important; transform: none !important }
+}
+
+/* ==========================================================================
+   The Al Hadaf way (#method) — scroll-told, driven by --p (0 → 1)
+   ========================================================================== */
+.way { position: relative; background: var(--stone) }
+.way.is-pinned .way-track { height: 330vh }
+.way-sticky { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 6vw; align-items: center; padding: 110px var(--gutter) 60px; overflow: hidden; isolation: isolate }
+.way.is-pinned .way-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; padding-top: 96px; padding-bottom: 40px }
+
+/* drifting background word + top rule */
+.way-bgword { position: absolute; z-index: -1; left: 0; bottom: 2vh; white-space: nowrap; font: italic 500 clamp(120px, 21vw, 340px)/.8 var(--serif); letter-spacing: -.07em; color: transparent; -webkit-text-stroke: 1px rgba(212, 10, 22, .13); translate: calc(var(--p) * -38%) 0; pointer-events: none; user-select: none }
+.way-sticky::before { content: ""; position: absolute; left: var(--gutter); right: var(--gutter); top: 0; height: 3px; background: var(--red); transform: scaleX(clamp(0, calc(var(--p) * 1.2 + .15), 1)); transform-origin: left }
+
+/* label */
+.way-label { display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font: 10px var(--mono); letter-spacing: .14em; color: var(--muted) }
+.way-label span { font: 500 46px/.8 var(--serif); letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1px var(--red) }
+.way-label i { width: 40px; height: 1px; background: var(--red) }
+
+/* headline that fills with ink as you scroll */
+.way-title { margin: 0; font: 500 clamp(54px, 7.4vw, 124px)/.9 var(--serif); letter-spacing: -.065em }
+.way-title span, .way-title em { --f: clamp(0, calc(var(--p) * 5), 1); display: block; width: fit-content; color: transparent; -webkit-text-stroke: 1px rgba(33, 28, 27, .32); background: linear-gradient(90deg, var(--ink) 50%, transparent 50%) 0 0 / 200% 100% no-repeat; background-position-x: calc((1 - var(--f)) * 100%); -webkit-background-clip: text; background-clip: text; padding-right: .06em }
+.way-title em { --f: clamp(0, calc(var(--p) * 5 - 1), 1); font-weight: 500; -webkit-text-stroke-color: rgba(212, 10, 22, .45); background-image: linear-gradient(90deg, var(--red) 50%, transparent 50%) }
+
+/* statement that lights up word by word */
+.way-statement { margin: 32px 0 0; max-width: 560px; font: 500 clamp(19px, 1.65vw, 25px)/1.45 var(--serif); letter-spacing: -.015em; color: var(--ink) }
+.way-statement span { opacity: clamp(.14, calc((var(--p) - .1) / .32 * var(--n) - var(--i)), 1); transition: opacity .2s linear }
+.way-left .under-link { margin-top: 30px }
+
+/* card deck */
+.way-right { display: grid; gap: 22px }
+.way-deck { position: relative; height: min(58vh, 540px); min-height: 360px }
+.way-card { position: absolute; inset: 0; overflow: hidden; background: var(--night); color: #fff; z-index: calc(3 - var(--d)); transition: transform 1.1s var(--ease), clip-path 1.1s var(--ease), filter .9s, opacity .9s; box-shadow: 0 30px 60px rgba(24, 20, 19, .25) }
+.way-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) contrast(1.05); transform: scale(1.2); transition: transform 1.6s var(--ease) }
+.way-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(12, 8, 7, .88), rgba(12, 8, 7, .15) 55%, rgba(12, 8, 7, .3)) }
+.way-card.is-next { clip-path: inset(100% 0 0 0); transform: translateY(50px) }
+.way-card.is-active { clip-path: inset(0); transform: none; z-index: 5 }
+.way-card.is-active img { transform: scale(1) }
+.way-card.is-past { clip-path: inset(0); transform: translate(calc(var(--d) * -5%), calc(var(--d) * -6%)) scale(calc(1 - var(--d) * .08)) rotate(calc(var(--d) * -3deg)); filter: brightness(.55) grayscale(.7) }
+.way-card-no { position: absolute; z-index: 1; top: 18px; right: 22px; font: 500 clamp(80px, 9vw, 140px)/.8 var(--serif); letter-spacing: -.08em; color: transparent; -webkit-text-stroke: 1.2px rgba(255, 255, 255, .55) }
+.way-card-body { position: absolute; z-index: 1; left: clamp(22px, 3vw, 40px); right: clamp(22px, 3vw, 40px); bottom: clamp(22px, 3vw, 36px) }
+.way-card-body > * { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .8s var(--ease) }
+.way-card.is-active .way-card-body > * { opacity: 1; transform: none }
+.way-card.is-active .way-card-body > :nth-child(1) { transition-delay: .35s }
+.way-card.is-active .way-card-body > :nth-child(2) { transition-delay: .45s }
+.way-card.is-active .way-card-body > :nth-child(3) { transition-delay: .55s }
+.way-tag { display: inline-block; background: var(--red); padding: 6px 9px; font: 9px var(--mono); letter-spacing: .12em }
+.way-card h3 { margin: 16px 0 10px; font: 500 clamp(30px, 3vw, 46px)/1 var(--serif); letter-spacing: -.045em }
+.way-card p { margin: 0; max-width: 360px; color: #e4dad6; font-size: 14.5px; line-height: 1.6 }
+.way-counter { position: absolute; z-index: 6; right: -1px; bottom: -1px; background: var(--stone); padding: 12px 0 0 16px; font: 10px var(--mono); letter-spacing: .12em; color: var(--muted) }
+.way-counter b { display: inline-block; font: 500 34px/1 var(--serif); letter-spacing: -.04em; color: var(--red); animation: numIn .7s var(--ease) both }
+
+/* progress rail */
+.way-rail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px }
+.way-rail button { display: grid; gap: 8px; text-align: left; padding: 0; background: none; border: 0; cursor: pointer; color: #a3958f; font: 500 15px/1.2 var(--serif); letter-spacing: -.01em; transition: color .3s }
+.way-rail button small { font: 9px var(--mono); letter-spacing: .12em; color: inherit }
+.way-rail button.is-active, .way-rail button.is-done, .way-rail button:hover { color: var(--ink) }
+.way-rail button.is-active small { color: var(--red) }
+.way-rail-bar { display: block; height: 2px; background: var(--line); overflow: hidden }
+.way-rail-bar i { display: block; height: 100%; background: var(--red); transform-origin: left }
+.way.is-pinned .way-rail-bar i { transform: scaleX(clamp(0, calc(var(--p) * 3 - var(--i)), 1)) }
+.way:not(.is-pinned) .way-rail button.is-done .way-rail-bar { background: var(--red) }
+.way:not(.is-pinned) .way-rail-bar i { animation: stepFill linear forwards }
+
+/* stats under the story */
+.way-stats { margin: 0 var(--gutter); padding-bottom: 30px; background: var(--stone) }
+.way-stats > div { position: relative; transition: background .4s }
+.way-stats > div:hover { background: rgba(212, 10, 22, .04) }
+.way-stats > div > i { position: absolute; left: 0; right: 25px; bottom: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease) }
+.way-stats > div:hover > i { transform: scaleX(1) }
+.way-stats strong { display: inline-block; transition: transform .5s var(--ease), color .3s }
+.way-stats > div:hover strong { transform: translateY(-4px); color: var(--red) }
+.js .way-stats[data-reveal] > div { opacity: 0; transform: translateY(30px); transition: opacity .7s var(--ease), transform .8s var(--ease), background .4s }
+.js .way-stats[data-reveal].is-visible > div { opacity: 1; transform: none }
+.js .way-stats[data-reveal].is-visible > div:nth-child(2) { transition-delay: .12s, .12s, 0s }
+.js .way-stats[data-reveal].is-visible > div:nth-child(3) { transition-delay: .24s, .24s, 0s }
+
+@media (max-width: 1180px) and (min-width: 981px) {
+  .way-title { font-size: clamp(50px, 6.4vw, 90px) }
+  .way-statement { font-size: 18px }
+}
+@media (max-width: 980px) {
+  .way-sticky { grid-template-columns: 1fr; gap: 50px; padding: 100px var(--gutter) 60px }
+  .way-deck { height: 62vw; min-height: 340px }
+  .way-bgword { bottom: auto; top: 40px; font-size: 30vw }
+}
+@media (max-width: 720px) {
+  .way-sticky { padding: 80px var(--gutter) 50px; gap: 40px }
+  .way-label span { font-size: 38px }
+  .way-title { font-size: clamp(48px, 14vw, 72px) }
+  .way-statement { font-size: 19px; margin-top: 24px }
+  .way-deck { height: 118vw; max-height: 500px; min-height: 0 }
+  .way-card.is-past { transform: translate(calc(var(--d) * -3%), calc(var(--d) * -4%)) scale(calc(1 - var(--d) * .06)) rotate(calc(var(--d) * -2deg)) }
+  .way-card p { font-size: 14px }
+  .way-rail { gap: 10px }
+  .way-rail button { font-size: 12.5px }
+  .way-stats > div > i { right: 0 }
+}
+@media (prefers-reduced-motion: reduce) {
+  .way-title span, .way-title em { --f: 1 }
+  .way-statement span { opacity: 1 }
+  .way-bgword { translate: none }
+}
+
+/* ==========================================================================
+   Capabilities — responsive
+   ========================================================================== */
+/* Touch screens: no sticky hover fill after a tap */
+@media (hover: none) {
+  .service-card:hover { color: #fff }
+  .service-card:hover::before { transform: scaleY(0) }
+  .service-card:hover::after { opacity: 0 }
+  .service-card:hover p { color: #b4a8a4 }
+  .service-card:hover .arrow { transform: none; color: inherit }
+  .service-card:hover .card-line { width: 42px }
+}
+
+/* Tablet: tighter two-column cards */
+@media (min-width: 721px) and (max-width: 1180px) {
+  .service-card { min-height: 250px; padding: 22px 24px 26px }
+  .cap-top > p { max-width: 560px }
+}
+
+/* Phone: separate panels that stack up over each other as you scroll */
+@media (max-width: 720px) {
+  .capabilities { padding: 80px var(--gutter) 70px }
+  .cap-top { gap: 18px }
+  .cap-top .display { font-size: clamp(44px, 13vw, 64px) }
+  .cap-top > p { font-size: 14.5px; max-width: none }
+  .service-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; border-top: 0 }
+  .service-card, .service-card:first-child, .service-card:nth-child(odd), .service-card:nth-child(n+3) { position: sticky; top: 84px; min-height: 0; gap: 28px; padding: 22px 20px 28px; border: 1px solid rgba(255, 255, 255, .14); background: linear-gradient(160deg, #262020, #1b1615); box-shadow: 0 -16px 36px rgba(0, 0, 0, .45) }
+  .service-card:nth-child(2) { top: 96px }
+  .service-card:nth-child(3) { top: 108px }
+  .service-card:nth-child(4) { top: 120px }
+  .service-card-top { align-items: center }
+  .service-card-top > span:first-child { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--red-bright); color: var(--red-bright); font-size: 11px }
+  .service-card-top .arrow { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, .06); line-height: 1; font-size: 16px }
+  .service-card h3 { font-size: clamp(24px, 7.4vw, 30px); margin-bottom: 10px; overflow-wrap: anywhere }
+  .service-card p { font-size: 14px; line-height: 1.65; color: #c2b6b2 }
+  .js .service-card[data-reveal] > .card-line, .card-line { left: 0; width: 100% !important; height: 3px; background: linear-gradient(90deg, var(--red), var(--red-bright)); transform: scaleX(0); transform-origin: left; transition: transform 1.1s var(--ease) .35s }
+  .js .service-card[data-reveal].is-visible > .card-line, html:not(.js) .card-line { transform: scaleX(1); opacity: 1 }
+  .js .service-card[data-reveal] { opacity: 0; transform: translateX(-40px) scale(.96) }
+  .js .service-card[data-reveal]:nth-child(even) { transform: translateX(40px) scale(.96) }
+  .js .service-card[data-reveal].is-visible { opacity: 1; transform: none }
+  .js .service-card[data-reveal].is-visible:nth-child(n) { transition-delay: 0s }
+  .js .service-card[data-reveal] > * { transition: opacity .5s ease .3s, transform .7s var(--ease) .3s }
+}
+@media (max-width: 380px) {
+  .service-card, .service-card:first-child, .service-card:nth-child(odd), .service-card:nth-child(n+3) { padding: 18px 16px 24px; gap: 22px }
+  .service-card-top > span:first-child, .service-card-top .arrow { width: 34px; height: 34px }
+}
+@media (max-width: 720px) and (prefers-reduced-motion: reduce) {
+  .service-card, .service-card:first-child, .service-card:nth-child(odd), .service-card:nth-child(n+3) { position: relative; top: 0 }
+  .card-line { transform: none !important }
 }
