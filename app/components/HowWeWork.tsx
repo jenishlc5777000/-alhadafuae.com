@@ -4,7 +4,7 @@ import { Arrow } from "./Brand";
 import { Words } from "./Words";
 import { img, images } from "../lib/content";
 
-const DURATION = 5200;
+const DURATION = 3500;
 
 const steps = [
   { title: "Tell us what you see", time: "SAME-DAY REPLY", pop: "Send photos on WhatsApp. We reply the same day.", text: "Call, WhatsApp or send a few photos. We ask the right questions and book a visit that suits you.", gets: ["A quick first opinion", "A visit booked at your convenience"], image: images.plans },
