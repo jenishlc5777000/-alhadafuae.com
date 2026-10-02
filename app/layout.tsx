@@ -5,6 +5,7 @@ import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import ContactSection from "./components/ContactSection";
 import Reveal from "./components/Reveal";
+import Effects from "./components/Effects";
 import { site } from "./lib/content";
 
 const sans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-sans", display: "swap" });
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </main>
         <SiteFooter />
         <Reveal />
+        <Effects />
       </body>
     </html>
   );

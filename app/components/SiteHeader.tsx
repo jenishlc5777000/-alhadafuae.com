@@ -50,7 +50,7 @@ export default function SiteHeader() {
       <header ref={headerRef} className={`site-header${scrolled ? " is-scrolled" : ""}${open ? " is-menu-open" : ""}`}>
         <Brand />
         <nav className="main-nav" aria-label="Main">
-          {links.slice(1).map((l) => (
+          {links.map((l) => (
             <Link key={l.href} href={l.href} className={isActive(l.href) ? "is-active" : undefined}>{l.label}</Link>
           ))}
         </nav>
