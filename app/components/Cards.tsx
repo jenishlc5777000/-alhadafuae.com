@@ -3,6 +3,8 @@ import { Arrow } from "./Brand";
 import { formatDate, img, type Post, type Project } from "../lib/content";
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const extras = project.gallery.slice(0, 3);
+  const total = 1 + project.gallery.length;
   return (
     <Link href={`/projects/${project.slug}`} className="project-card">
       <div className="pc-media">
@@ -10,7 +12,16 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         <span className="pc-no">{String(index + 1).padStart(2, "0")}</span>
         <span className="pc-tag">{project.category}</span>
         <span className="pc-view" aria-hidden="true">VIEW<br />CASE ↗</span>
+        {total > 1 && <span className="pc-count" aria-hidden="true">+{total - 1}</span>}
       </div>
+      {extras.length > 0 && (
+        <div className="pc-thumbs" aria-hidden="true">
+          {extras.map((g) => (
+            <span key={g} className="pc-thumb"><img src={img(g, 300)} alt="" loading="lazy" /></span>
+          ))}
+          {project.gallery.length > extras.length && <span className="pc-thumb pc-thumb-more">+{project.gallery.length - extras.length}</span>}
+        </div>
+      )}
       <div className="pc-body">
         <p className="pc-meta">{project.sector}{project.location && <><i />{project.location}</>}{project.year && <><i />{project.year}</>}</p>
         <h3>{project.title}</h3>
