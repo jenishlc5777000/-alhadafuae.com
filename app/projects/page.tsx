@@ -17,10 +17,10 @@ export default function ProjectsPage() {
         index="03"
         kicker="SELECTED PROJECTS"
         title={<>Work that<br /><em>stands up.</em></>}
-        intro="Towers, hotels, warehouses and car parks. Each project began with a question about the concrete, and ended with a building in better shape."
-        image={images.team}
+        intro="Quay walls, slabs, columns, warehouses and paving. Real work from our own sites, each one starting with a question about the concrete."
+        image="/projects/quay-1.jpg"
         crumbs={[{ href: "/", label: "Home" }, { label: "Projects" }]}
-        meta={<>{String(projects.length).padStart(2, "0")} CASE STUDIES<br />ACROSS DUBAI</>}
+        meta={<>{String(projects.length).padStart(2, "0")} PROJECTS<br />FROM OUR SITES</>}
       />
       <section className="projects-index">
         <div className="section-heading" data-reveal>
@@ -28,7 +28,7 @@ export default function ProjectsPage() {
             <p className="kicker">CASE STUDIES / 01</p>
             <h2 className="display">Every site<br /><em>has a story.</em></h2>
           </div>
-          <p className="section-aside">Filter by discipline, then open a project to see the challenge, our approach and the result.</p>
+          <p className="section-aside">Filter by discipline, then open a project to see the site, our scope of work and more photos.</p>
         </div>
         <ProjectGallery projects={projects} categories={projectCategories} />
       </section>

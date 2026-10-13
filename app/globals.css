@@ -79,9 +79,9 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .site-header.is-menu-open { background: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none }
 .scroll-progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--red-bright); transform-origin: left; transform: scaleX(var(--progress, 0)); pointer-events: none }
 .brand { display: flex; align-items: center; gap: 11px; font-weight: 600; font-size: 16px; line-height: 1; letter-spacing: .13em; position: relative; z-index: 2 }
-.brand small { display: block; margin-top: 6px; font: 8px var(--mono); letter-spacing: .11em }
-.brand-logo { width: auto; height: 40px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35)); transition: transform .45s var(--ease) }
-.brand:hover .brand-logo { transform: rotate(-8deg) scale(1.08) }
+.brand-logo { width: auto; height: 46px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35)); transition: transform .45s var(--ease) }
+.brand:hover .brand-logo { transform: scale(1.04) translateX(2px) }
+.footer-brand .brand-logo { height: 58px }
 .main-nav { display: flex; align-items: center; gap: clamp(20px, 2.6vw, 38px) }
 .main-nav a { position: relative; font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 6px 0; opacity: .82; transition: opacity .2s }
 .main-nav a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%; background: var(--red-bright); transform: scaleX(0); transform-origin: right; transition: transform .45s var(--ease) }
@@ -227,7 +227,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 /* ---------- Project band ---------- */
 .project-band { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 700px; background: var(--stone-2) }
 .project-image { position: relative; overflow: hidden; background: var(--night) }
-.project-image::before { content: ""; position: absolute; inset: -14% 0; background: linear-gradient(0deg, rgba(14, 9, 8, .35), transparent), url('https://images.unsplash.com/photo-1582540730843-f4418d96ccbe?auto=format&fit=crop&w=1400&q=82') center / cover; translate: 0 var(--parallax, 0px); will-change: translate }
+.project-image::before { content: ""; position: absolute; inset: -14% 0; background: linear-gradient(0deg, rgba(14, 9, 8, .35), transparent), url('/projects/warehouse-1.jpg') center / cover; translate: 0 var(--parallax, 0px); will-change: translate }
 .project-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, .17) 48%, transparent 70%); transform: translateX(-120%); transition: transform .9s ease }
 .project-band:hover .project-image::after { transform: translateX(120%) }
 .image-label { position: absolute; top: 37px; left: 37px; color: #fff }
@@ -384,7 +384,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .cta-band > div:last-child > p { color: #cfc4c0; line-height: 1.7; margin: 0 0 28px; max-width: 360px }
 
 /* ---------- Project detail ---------- */
-.facts { margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); background: var(--stone-2); border-bottom: 1px solid var(--line) }
+.facts { margin: 0; display: grid; grid-template-columns: repeat(var(--n, 4), 1fr); background: var(--stone-2); border-bottom: 1px solid var(--line) }
 .facts > div { padding: 30px var(--edge) 28px; border-right: 1px solid var(--line) }
 .facts > div:last-child { border-right: 0 }
 .facts dt { font: 9px var(--mono); letter-spacing: .12em; color: var(--red); margin-bottom: 10px }
@@ -398,11 +398,11 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .approach-list li:first-child { padding-top: 0 }
 .approach-list span { font: 10px var(--mono); color: var(--red); letter-spacing: .1em; padding-top: 4px }
 .approach-list p { margin: 0; font-size: 16px; line-height: 1.7; color: #4a403d }
-.case-gallery { padding: 0 var(--gutter) 120px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 14px }
-.case-gallery figure { overflow: hidden; background: var(--night) }
-.case-gallery figure:first-child { grid-row: span 2 }
-.case-gallery figure:nth-child(4) { grid-column: span 2 }
-.case-gallery img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.75); transition: transform 1.1s var(--ease), filter .6s }
+.case-photos { padding: 0 var(--gutter) 120px }
+.case-photos > .kicker { margin-bottom: 28px; color: var(--red) }
+.case-gallery { column-count: 3; column-gap: 14px }
+.case-gallery figure { break-inside: avoid; margin: 0 0 14px; overflow: hidden; background: var(--night) }
+.case-gallery img { width: 100%; height: auto; display: block; filter: saturate(.85); transition: transform 1.1s var(--ease), filter .6s }
 .case-gallery figure:hover img { transform: scale(1.05); filter: saturate(1) }
 .next-project { position: relative; display: block; min-height: 480px; color: #fff; background: var(--deep); overflow: hidden }
 .next-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: saturate(.5) brightness(.45); transform: scale(1.05); transition: transform 1.4s var(--ease), filter .8s }
@@ -535,8 +535,9 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
   .header-cta span:not(.arrow) { display: none }
   .header-cta { width: 44px; padding: 0; justify-content: center }
   .header-cta .arrow { line-height: 1; font-size: 17px }
-  .brand { font-size: 14px; gap: 9px }
-  .brand-logo { height: 34px }
+  .brand { gap: 9px }
+  .brand-logo { height: 36px }
+  .footer-brand .brand-logo { height: 48px }
   .hero { min-height: 640px; max-height: none }
   .hero-content { transform: translateY(-36%) }
   .hero-title { font-size: clamp(48px, 14vw, 78px) }
@@ -606,11 +607,11 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
   .facts > div { padding: 22px var(--gutter); border-top: 1px solid var(--line) }
   .facts > div:nth-child(odd) { border-right: 1px solid var(--line) }
   .facts > div:nth-child(even) { border-right: 0 }
-  .facts > div:last-child { grid-column: 1 / -1; border-right: 0 }
+  .facts > div:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0 }
   .case { padding: 80px var(--gutter); gap: 60px }
-  .case-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 260px 160px 160px; padding-bottom: 80px; gap: 8px }
-  .case-gallery figure:first-child { grid-column: 1 / -1; grid-row: auto }
-  .case-gallery figure:nth-child(4) { grid-column: 1 / -1 }
+  .case-photos { padding-bottom: 80px }
+  .case-gallery { column-count: 2; column-gap: 8px }
+  .case-gallery figure { margin-bottom: 8px }
   .next-project { min-height: 380px }
   .next-inner { padding: 90px var(--gutter) }
   .featured-post { padding-top: 80px }
@@ -924,4 +925,38 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 @media (max-width: 720px) and (prefers-reduced-motion: reduce) {
   .service-card, .service-card:first-child, .service-card:nth-child(odd), .service-card:nth-child(n+3) { position: relative; top: 0 }
   .card-line { transform: none !important }
+}
+
+/* ==========================================================================
+   Six-service grid (home capabilities)
+   ========================================================================== */
+@media (min-width: 1181px) {
+  .service-grid.six { grid-template-columns: repeat(3, 1fr) }
+  .service-grid.six .service-card { min-height: 280px; padding: 22px 26px 26px; border-left: 0 }
+  .service-grid.six .service-card:nth-child(3n+1) { border-left: 1px solid rgba(255, 255, 255, .2) }
+  .service-grid.six .service-card:nth-child(n+4) { border-top: 1px solid rgba(255, 255, 255, .2) }
+  .service-grid.six .service-card h3 { font-size: 31px }
+  .service-grid.six .service-card p { font-size: 13.5px; max-width: 340px }
+  .service-grid.six .card-line { left: 26px }
+  .service-grid.six .service-card:hover .card-line { width: calc(100% - 52px) }
+  .js .service-card[data-reveal].is-visible:nth-child(4) { transition-delay: .12s, .12s, 0s }
+  .js .service-card[data-reveal].is-visible:nth-child(5) { transition-delay: .24s, .24s, 0s }
+  .js .service-card[data-reveal].is-visible:nth-child(6) { transition-delay: .36s, .36s, 0s }
+  /* middle column rises from below, outer columns slide in from the sides */
+  .js .service-grid.six .service-card[data-reveal]:nth-child(3n+2) { transform: translateY(70px) }
+  .js .service-grid.six .service-card[data-reveal]:nth-child(3n) { transform: translateX(90px) rotate(1.5deg) }
+  .js .service-grid.six .service-card[data-reveal]:nth-child(3n+1) { transform: translateX(-90px) rotate(-1.5deg) }
+  .js .service-grid.six .service-card[data-reveal].is-visible { transform: none }
+}
+@media (min-width: 721px) and (max-width: 1180px) {
+  .js .service-card[data-reveal].is-visible:nth-child(5) { transition-delay: 0s }
+  .js .service-card[data-reveal].is-visible:nth-child(6) { transition-delay: .12s, .12s, 0s }
+}
+@media (max-width: 720px) {
+  .service-card:nth-child(5) { top: 132px }
+  .service-card:nth-child(6) { top: 144px }
+}
+
+@media (max-width: 980px) {
+  .case-gallery { column-count: 2 }
 }

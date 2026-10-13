@@ -2,9 +2,8 @@ import Link from "next/link";
 
 export function Brand() {
   return (
-    <Link className="brand" href="/" aria-label="Al Hadaf home">
-      <img className="brand-logo" src="/al-hadaf-logo.png" alt="" width={27} height={40} />
-      <span>AL HADAF<small>CONCRETE RESTORATION</small></span>
+    <Link className="brand" href="/" aria-label="Al Hadaf Concrete Restoration, home">
+      <img className="brand-logo" src="/al-hadaf-logo-light.png" alt="Al Hadaf Concrete Restoration" width={154} height={40} />
     </Link>
   );
 }

@@ -1,10 +1,9 @@
 "use client";
 import { useState } from "react";
-import { img, images } from "../lib/content";
 
 const scenes = [
-  { label: "FIELD", src: "/watermarked_preview.mp4", poster: img(images.pour, 1800) },
-  { label: "URBAN", src: "https://cdn.coverr.co/videos/coverr-construction-workers-in-the-city-hmisd9bkec/1080p.mp4", poster: img(images.team, 1800) },
+  { label: "FIELD", src: "/watermarked_preview.mp4", poster: "/projects/quay-1.jpg" },
+  { label: "URBAN", src: "https://cdn.coverr.co/videos/coverr-construction-workers-in-the-city-hmisd9bkec/1080p.mp4", poster: "/projects/warehouse-1.jpg" },
 ];
 
 export default function HeroVideo() {

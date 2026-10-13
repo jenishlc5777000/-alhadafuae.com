@@ -2,17 +2,17 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Arrow } from "./Brand";
-import { img, images } from "../lib/content";
+import { img } from "../lib/content";
 
 const CYCLE = 3200;
 
 const principles = [
-  { title: "Ask better questions", tag: "LISTEN FIRST", text: "We learn a building's history before forming a view.", image: images.inspect },
-  { title: "Measure, don't guess", tag: "SITE INTELLIGENCE", text: "Testing and scanning guide every decision we make.", image: images.survey },
-  { title: "Restore what lasts", tag: "BUILT TO LAST", text: "Repairs designed to outlive the next inspection.", image: images.plaster },
+  { title: "Investigate", tag: "SEE THE CONDITION", text: "Coring, GPR scanning and assessment show what is inside and what is wrong, before any work begins.", image: "/projects/coring-2.jpg" },
+  { title: "Repair", tag: "SOLVE THE CAUSE", text: "Patch repairs, corrosion treatment, crack injection and strengthening restore profile and performance.", image: "/projects/slab-1.jpg" },
+  { title: "Protect", tag: "BUILT TO LAST", text: "Waterproofing and epoxy systems give a durable, resilient finish for years to come.", image: "/projects/slab-5.jpg" },
 ];
 
-const statement = "We work with a healthy respect for what is already there. Better questions at the start, accurate information on site, and restoration that earns its place in the life of a building.".split(" ");
+const statement = "Every job starts by understanding what is really happening in the concrete. We investigate first, repair with the right system, then protect the result, restoring strength, durability and finish.".split(" ");
 
 /**
  * Scroll-told section. On large screens it pins for ~2 screens of scroll and drives
@@ -75,11 +75,11 @@ export default function WaySection() {
     <section className={`way${pinned ? " is-pinned" : ""}`} id="method" ref={ref} style={{ "--p": 0 } as React.CSSProperties}>
       <div className="way-track" ref={trackRef}>
       <div className="way-sticky">
-        <div className="way-bgword" aria-hidden="true">LOOK CLOSER</div>
+        <div className="way-bgword" aria-hidden="true">INVESTIGATE. REPAIR. PROTECT.</div>
 
         <div className="way-left">
-          <p className="way-label"><span>01</span><i />THE AL HADAF WAY</p>
-          <h2 className="way-title"><span>Look closer.</span><em>Build confidence.</em></h2>
+          <p className="way-label"><span>01</span><i />THE AL HADAF APPROACH</p>
+          <h2 className="way-title"><span>See the condition.</span><em>Solve the cause.</em></h2>
           <p className="way-statement" style={{ "--n": statement.length } as React.CSSProperties}>
             {statement.map((w, i) => <span key={i} style={{ "--i": i } as React.CSSProperties}>{w} </span>)}
           </p>
@@ -105,7 +105,7 @@ export default function WaySection() {
             <div className="way-counter" aria-hidden="true"><b key={active}>0{active + 1}</b> / 0{principles.length}</div>
           </div>
 
-          <div className="way-rail" role="tablist" aria-label="Our principles">
+          <div className="way-rail" role="tablist" aria-label="Our approach">
             {principles.map((pr, i) => (
               <button key={pr.title} type="button" role="tab" aria-selected={i === active} style={{ "--i": i } as React.CSSProperties}
                 className={i === active ? "is-active" : i < active ? "is-done" : undefined} onClick={() => go(i)}>

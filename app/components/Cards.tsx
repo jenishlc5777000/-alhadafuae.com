@@ -6,13 +6,13 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
   return (
     <Link href={`/projects/${project.slug}`} className="project-card">
       <div className="pc-media">
-        <img src={img(project.image, 1200)} alt={`${project.title}, ${project.location}`} loading="lazy" />
+        <img src={img(project.image, 1200)} alt={project.title} loading="lazy" />
         <span className="pc-no">{String(index + 1).padStart(2, "0")}</span>
         <span className="pc-tag">{project.category}</span>
         <span className="pc-view" aria-hidden="true">VIEW<br />CASE ↗</span>
       </div>
       <div className="pc-body">
-        <p className="pc-meta">{project.location} <i /> {project.year}</p>
+        <p className="pc-meta">{project.sector}{project.location && <><i />{project.location}</>}{project.year && <><i />{project.year}</>}</p>
         <h3>{project.title}</h3>
         <p>{project.excerpt}</p>
       </div>

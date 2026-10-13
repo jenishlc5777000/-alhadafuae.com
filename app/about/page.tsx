@@ -37,7 +37,7 @@ export default function AboutPage() {
         kicker="ABOUT AL HADAF"
         title={<>Built on<br /><em>close attention.</em></>}
         intro="Since 2015 we have helped Dubai's building owners, consultants and contractors understand their concrete, and look after it properly."
-        image={images.rebar}
+        image="/projects/warehouse-1.jpg"
         crumbs={[{ href: "/", label: "Home" }, { label: "About" }]}
         meta={<>EST. 2015<br />DUBAI, UAE</>}
       />
@@ -52,8 +52,8 @@ export default function AboutPage() {
           <Link className="under-link" href="/projects">See the work <Arrow /></Link>
         </div>
         <div className="story-media" data-reveal>
-          <figure className="story-img-a"><img src={img(images.inspect, 1000)} alt="Engineers reviewing plans on site" loading="lazy" /></figure>
-          <figure className="story-img-b"><img src={img(images.plaster, 800)} alt="Repair mortar being applied with trowels" loading="lazy" /></figure>
+          <figure className="story-img-a"><img src={"/projects/coring-1.jpg"} alt="Coring and GPR scanning on site" loading="lazy" /></figure>
+          <figure className="story-img-b"><img src={"/projects/slab-1.jpg"} alt="Slab patch repair in progress" loading="lazy" /></figure>
           <div className="story-badge"><strong>10<sup>+</sup></strong><span>YEARS OF<br />RESTORATION</span></div>
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function AboutPage() {
       <section className="stats-band" data-reveal>
         <div><strong><span data-count="50">50</span>+</strong><span>PROJECTS DELIVERED</span></div>
         <div><strong><span data-count="10">10</span>+</strong><span>YEARS IN DUBAI</span></div>
-        <div><strong><span data-count="4">4</span></strong><span>CORE DISCIPLINES</span></div>
+        <div><strong><span data-count="6">6</span></strong><span>CORE SERVICES</span></div>
         <div><strong>24/7</strong><span>SUPPORT WHEN IT COUNTS</span></div>
       </section>
 
