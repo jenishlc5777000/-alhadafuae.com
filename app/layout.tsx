@@ -15,9 +15,9 @@ const serif = Playfair_Display({ subsets: ["latin"], weight: ["500", "600"], sty
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: "Al Hadaf | Concrete Restoration Company in Dubai", template: "%s | Al Hadaf" },
-  description: "Concrete repair, structural strengthening, scanning and building maintenance across Dubai. Talk to Al Hadaf for a practical site assessment.",
-  keywords: ["concrete restoration Dubai", "concrete repair Dubai", "structural strengthening Dubai", "concrete scanning Dubai", "building maintenance Dubai"],
-  openGraph: { type: "website", locale: "en_AE", siteName: site.name, title: "Concrete Restoration Company in Dubai", description: "Practical restoration. Stronger buildings. Better outcomes." },
+  description: "Specialist concrete restoration in Dubai: coring and GPR scanning, assessment, concrete repair, waterproofing, strengthening and epoxy systems. Investigate. Repair. Protect.",
+  keywords: ["concrete restoration Dubai", "concrete repair Dubai", "GPR scanning Dubai", "concrete coring Dubai", "waterproofing Dubai", "concrete strengthening Dubai", "epoxy flooring Dubai"],
+  openGraph: { type: "website", locale: "en_AE", siteName: site.name, title: "Concrete Restoration, Done Right", description: "Investigate. Repair. Protect. From first scan to final finish." },
   alternates: { canonical: "/" },
 };
 
@@ -30,7 +30,8 @@ const schema = {
   url: site.url,
   telephone: "+971582227430",
   email: site.email,
-  description: "Concrete restoration, repair, structural strengthening, scanning and building maintenance in Dubai.",
+  alternateName: "Al Hadaf Interiors & Concrete Restoration",
+  description: "Concrete restoration in Dubai: coring and GPR scanning, assessment, repair, waterproofing, strengthening and epoxy systems.",
   address: { "@type": "PostalAddress", streetAddress: "Office No 12, 30th Floor, Al Moosa Tower, Opposite Emirates Tower", addressLocality: "Dubai", addressCountry: "AE" },
   areaServed: "Dubai",
 };

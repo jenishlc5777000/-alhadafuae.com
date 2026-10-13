@@ -18,13 +18,13 @@ export default function Home() {
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-index" aria-hidden="true">01 <i /> 06</div>
         <div className="hero-content">
-          <p className="kicker light"><i />Dubai-based concrete restoration</p>
+          <p className="kicker light"><i />Specialist engineering services</p>
           <h1 className="hero-title">
-            <span className="line"><span>STRUCTURAL</span></span>
-            <span className="line"><em>care, made</em></span>
-            <span className="line"><span>certain.</span></span>
+            <span className="line"><span>CONCRETE</span></span>
+            <span className="line"><em>restoration,</em></span>
+            <span className="line"><span>done right.</span></span>
           </h1>
-          <p className="hero-summary">For buildings that need more than a quick fix. Al Hadaf brings the diagnosis, detail and delivery together.</p>
+          <p className="hero-summary">Investigate. Repair. Protect. Purpose-built solutions for concrete structures, from first scan to final finish.</p>
           <div className="hero-buttons">
             <a className="button primary" href="#contact" data-magnetic><span>Request a site assessment</span> <Arrow /></a>
             <a className="play-link" href="#process"><b>↓</b><span>See how we work</span></a>
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="hero-bottom"><span>AL HADAF <i /> EST. 2015</span><a href="#method" className="scroll-cue">SCROLL TO EXPLORE <span className="scroll-line" aria-hidden="true" /></a></div>
       </section>
 
-      <Ticker items={["CONCRETE REPAIR", "STRUCTURAL STRENGTHENING", "BUILDING MAINTENANCE", "CONCRETE SCANNING", "CORE CUTTING"]} />
+      <Ticker items={["CORING & GPR SCANNING", "ASSESSMENT", "CONCRETE REPAIR", "WATERPROOFING", "CONCRETE STRENGTHENING", "EPOXY SYSTEMS"]} />
 
       <WaySection />
 
@@ -47,11 +47,11 @@ export default function Home() {
         <div className="cap-top" data-reveal>
           <div>
             <p className="kicker light">CAPABILITIES / 02</p>
-            <h2 className="display"><Words text="Made for the" /><br /><em><Words text="real world." start={3} /></em></h2>
+            <h2 className="display"><Words text="Engineering that" /><br /><em><Words text="makes concrete last." start={2} /></em></h2>
           </div>
-          <p>Every brief has a history. Our job is to understand it clearly, make the right intervention, and leave the building stronger than we found it.</p>
+          <p>Al Hadaf delivers focused restoration and protection works for residential, commercial and industrial projects in Dubai. We combine practical site insight with durable repair systems.</p>
         </div>
-        <div className="service-grid" data-spotlight>
+        <div className="service-grid six" data-spotlight>
           {services.map((s) => (
             <article className="service-card" key={s.n} data-reveal>
               <div className="service-card-top"><span>{s.n}</span><Arrow /></div>

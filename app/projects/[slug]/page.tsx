@@ -26,7 +26,8 @@ export default async function ProjectPage({ params }: Params) {
   const project = projects[i];
   const next = projects[(i + 1) % projects.length];
 
-  const facts: [string, string][] = [["CLIENT TYPE", project.sector], ["LOCATION", project.location], ["DISCIPLINE", project.category], ["YEAR", project.year], ["DURATION", project.duration]];
+  const facts = ([["SECTOR", project.sector], ["DISCIPLINE", project.category], ["LOCATION", project.location], ["YEAR", project.year]] as [string, string | undefined][]).filter((f): f is [string, string] => Boolean(f[1]));
+  const photos = project.gallery;
 
   return (
     <>
@@ -39,43 +40,52 @@ export default async function ProjectPage({ params }: Params) {
         crumbs={[{ href: "/", label: "Home" }, { href: "/projects", label: "Projects" }, { label: project.title }]}
       />
 
-      <dl className="facts" data-reveal>
+      <dl className="facts" data-reveal style={{ "--n": facts.length } as React.CSSProperties}>
         {facts.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
       </dl>
 
       <section className="case">
         <div className="case-block" data-reveal>
-          <p className="kicker">01 / THE CHALLENGE</p>
+          <p className="kicker">01 / THE SITUATION</p>
           <p className="case-lead">{project.challenge}</p>
         </div>
         <div className="case-block" data-reveal>
-          <p className="kicker">02 / OUR APPROACH</p>
+          <p className="kicker">02 / SCOPE OF WORK</p>
           <ol className="approach-list">
             {project.approach.map((a, n) => <li key={n}><span>0{n + 1}</span><p>{a}</p></li>)}
           </ol>
         </div>
-        <div className="case-block" data-reveal>
-          <p className="kicker">03 / THE OUTCOME</p>
-          <p className="case-lead">{project.outcome}</p>
-        </div>
+        {project.outcome && (
+          <div className="case-block" data-reveal>
+            <p className="kicker">03 / THE OUTCOME</p>
+            <p className="case-lead">{project.outcome}</p>
+          </div>
+        )}
       </section>
 
-      <section className="case-gallery" data-reveal>
-        {[project.image, ...project.gallery].slice(0, 4).map((g, n) => (
-          <figure key={g + n}><img src={img(g, n === 0 ? 1600 : 900)} alt={`${project.title}, site view ${n + 1}`} loading="lazy" /></figure>
-        ))}
-      </section>
+      {photos.length > 0 && (
+        <section className="case-photos">
+          <p className="kicker" data-reveal><i />FROM THE SITE / {String(photos.length + 1).padStart(2, "0")} PHOTOS</p>
+          <div className="case-gallery" data-reveal>
+            {photos.map((g, n) => (
+              <figure key={g}><img src={img(g, 1000)} alt={`${project.title}, site view ${n + 2}`} loading="lazy" /></figure>
+            ))}
+          </div>
+        </section>
+      )}
 
-      <section className="stats-band dark" data-reveal>
-        {project.results.map(([v, l]) => <div key={l}><strong>{v}</strong><span>{l.toUpperCase()}</span></div>)}
-      </section>
+      {project.results && project.results.length > 0 && (
+        <section className="stats-band dark" data-reveal>
+          {project.results.map(([v, l]) => <div key={l}><strong>{v}</strong><span>{l.toUpperCase()}</span></div>)}
+        </section>
+      )}
 
       <Link href={`/projects/${next.slug}`} className="next-project">
         <div className="next-bg" style={{ backgroundImage: `url(${img(next.image, 1800)})` }} aria-hidden="true" />
         <div className="next-inner">
           <p className="kicker light"><i />NEXT PROJECT</p>
           <h2>{next.title}</h2>
-          <span className="next-meta">{next.location} · {next.category} <Arrow /></span>
+          <span className="next-meta">{next.sector} · {next.category} <Arrow /></span>
         </div>
       </Link>
 
