@@ -76,8 +76,8 @@ export const projects: Project[] = [
       "Concrete repairs and protective treatment suited to a wet, salt-laden marine environment.",
       "Works coordinated with the yard's ongoing marine and lifting operations.",
     ],
-    image: "/projects/quay-1.jpg",
-    gallery: ["/projects/quay-2.jpg", "/projects/quay-3.jpg", "/projects/quay-4.jpg", "/projects/quay-5.jpg", "/projects/quay-6.jpg"],
+    image: "/projects/quay-1.webp",
+    gallery: ["/projects/quay-2.webp", "/projects/quay-3.webp", "/projects/quay-4.webp", "/projects/quay-5.webp", "/projects/quay-6.webp"],
   },
   {
     slug: "slab-patch-repair-waterproofing",
@@ -92,8 +92,8 @@ export const projects: Project[] = [
       "Repair of the patch with compatible material, then waterproof coating over the repaired area.",
       "Joints, edges and surrounding concrete checked and sealed so water cannot return.",
     ],
-    image: "/projects/slab-1.jpg",
-    gallery: ["/projects/slab-2.jpg", "/projects/slab-3.jpg", "/projects/slab-4.jpg", "/projects/slab-5.jpg", "/projects/slab-6.jpg"],
+    image: "/projects/slab-1.webp",
+    gallery: ["/projects/slab-2.webp", "/projects/slab-3.webp", "/projects/slab-4.webp", "/projects/slab-5.webp", "/projects/slab-6.webp"],
   },
   {
     slug: "coring-and-gpr-scanning",
@@ -108,8 +108,8 @@ export const projects: Project[] = [
       "Positions set out and checked against the marked locations before each core.",
       "Debris and slurry managed so surrounding finishes and services stay clean.",
     ],
-    image: "/projects/coring-1.jpg",
-    gallery: ["/projects/coring-2.jpg", "/projects/coring-3.jpg", "/projects/coring-4.jpg", "/projects/coring-5.jpg"],
+    image: "/projects/coring-1.webp",
+    gallery: ["/projects/coring-2.webp", "/projects/coring-3.webp", "/projects/coring-4.webp", "/projects/coring-5.webp"],
   },
   {
     slug: "column-and-foundation-strengthening",
@@ -124,8 +124,8 @@ export const projects: Project[] = [
       "Concrete enlargement and jacketing carried out to the engineer's design.",
       "Works sequenced column by column so the rest of the structure stayed stable.",
     ],
-    image: "/projects/columns-1.jpg",
-    gallery: ["/projects/columns-2.jpg", "/projects/columns-3.jpg"],
+    image: "/projects/columns-1.webp",
+    gallery: ["/projects/columns-2.webp", "/projects/columns-3.webp"],
   },
   {
     slug: "warehouse-high-wall-works",
@@ -140,8 +140,8 @@ export const projects: Project[] = [
       "Wall condition inspected and the required work carried out from the platforms.",
       "Equipment, materials and waste kept tidy so the warehouse floor stayed usable.",
     ],
-    image: "/projects/warehouse-1.jpg",
-    gallery: ["/projects/warehouse-2.jpg", "/projects/warehouse-3.jpg"],
+    image: "/projects/warehouse-1.webp",
+    gallery: ["/projects/warehouse-2.webp", "/projects/warehouse-3.webp"],
   },
   {
     slug: "interior-ceiling-works",
@@ -156,8 +156,8 @@ export const projects: Project[] = [
       "Openings left for the air vent, smoke detector and other services.",
       "Surfaces left ready for jointing, painting and final finishes.",
     ],
-    image: "/projects/ceiling-1.jpg",
-    gallery: ["/projects/ceiling-2.jpg"],
+    image: "/projects/ceiling-1.webp",
+    gallery: ["/projects/ceiling-2.webp"],
   },
   {
     slug: "paving-repair-and-installation",
@@ -172,8 +172,8 @@ export const projects: Project[] = [
       "New paving laid in the yard on a prepared base, working through sand and dust.",
       "Surfaces compacted and finished so they can take traffic.",
     ],
-    image: "/projects/paving-1.jpg",
-    gallery: ["/projects/paving-2.jpg", "/projects/paving-3.jpg", "/projects/paving-4.jpg", "/projects/paving-5.jpg"],
+    image: "/projects/paving-1.webp",
+    gallery: ["/projects/paving-2.webp", "/projects/paving-3.webp", "/projects/paving-4.webp", "/projects/paving-5.webp"],
   },
   {
     slug: "roof-and-parapet-assessment",
@@ -188,7 +188,7 @@ export const projects: Project[] = [
       "Parapet surface condition checked for water ingress and failed coating.",
       "Repair and waterproofing options recommended from the findings.",
     ],
-    image: "/projects/roof-1.jpg",
+    image: "/projects/roof-1.webp",
     gallery: [],
   },
 ];
@@ -216,7 +216,7 @@ export const posts: Post[] = [
     date: "2026-09-12",
     readTime: "6 min read",
     excerpt: "A close look at signs that deserve a proper site assessment.",
-    image: "/projects/slab-3.jpg",
+    image: "/projects/slab-3.webp",
     lead: "Almost every concrete building cracks. The useful question is not whether a crack exists, but what it is telling you about the structure behind it.",
     sections: [
       { id: "why-concrete-cracks", heading: "Why concrete cracks at all", paras: ["Concrete shrinks as it dries and moves with temperature. In Dubai, where surfaces can swing by more than 30°C between night and midday, that movement is constant. Fine, shallow cracks are often the material relieving stress, and many never grow.", "Problems start when cracks are caused by load, settlement or corroding reinforcement. Those cracks keep moving, and they usually get worse."] },
@@ -233,7 +233,7 @@ export const posts: Post[] = [
     date: "2026-08-21",
     readTime: "5 min read",
     excerpt: "Why the best intervention begins with an invisible investigation.",
-    image: "/projects/coring-3.jpg",
+    image: "/projects/coring-3.webp",
     lead: "Before a single core is drilled, the most valuable work on a project is often invisible: finding out exactly what is inside the concrete.",
     sections: [
       { id: "the-risk", heading: "The risk you cannot see", paras: ["Slabs and walls hide reinforcement, post-tensioned tendons, conduits and pipes. Cutting through the wrong one can mean structural damage, live electrical hazards or a flooded floor, followed by delays and difficult conversations."] },
@@ -249,7 +249,7 @@ export const posts: Post[] = [
     date: "2026-07-30",
     readTime: "7 min read",
     excerpt: "A practical rhythm for protecting exposed concrete throughout the year.",
-    image: "/projects/paving-2.jpg",
+    image: "/projects/paving-2.webp",
     lead: "Heat, humidity, salt air and sand put concrete in the Gulf under constant pressure. A simple routine catches most problems while they are still cheap to fix.",
     sections: [
       { id: "monthly", heading: "Every month", paras: ["A short walk-round by the facilities team is enough:"], list: ["Look for new cracks, staining or loose material", "Check drains, gullies and roof outlets are clear of sand", "Note any damp patches on soffits or walls"] },
@@ -266,7 +266,7 @@ export const posts: Post[] = [
     date: "2026-06-18",
     readTime: "6 min read",
     excerpt: "The chemistry behind spalling, and what it means for how repairs should be designed.",
-    image: "/projects/quay-3.jpg",
+    image: "/projects/quay-3.webp",
     lead: "Healthy concrete protects the steel inside it. Most of the spalling we repair starts when that protection is lost.",
     sections: [
       { id: "passive-layer", heading: "The passive layer", paras: ["Fresh concrete is highly alkaline, which forms a thin protective film on the reinforcement. While that film survives, the steel barely corrodes, even in a harsh climate."] },
@@ -282,7 +282,7 @@ export const posts: Post[] = [
     date: "2026-05-09",
     readTime: "5 min read",
     excerpt: "How we add capacity to beams, slabs and columns, and when strengthening is the right choice.",
-    image: "/projects/columns-2.jpg",
+    image: "/projects/columns-2.webp",
     lead: "Many buildings are asked to do more than they were designed for. Strengthening lets an existing structure carry the extra load, without starting again.",
     sections: [
       { id: "what-it-is", heading: "Two common methods", paras: ["Concrete enlargement adds new reinforced concrete around an existing member, making it larger and stronger. Steel jacketing wraps a member, often a column, in steel plates or angles that confine the concrete and carry extra load. Both work together with the original structure."] },
@@ -298,7 +298,7 @@ export const posts: Post[] = [
     date: "2026-04-15",
     readTime: "4 min read",
     excerpt: "How to keep noise, dust and risk down when the building has to stay open.",
-    image: "/projects/coring-5.jpg",
+    image: "/projects/coring-5.webp",
     lead: "Hotels, offices and residential towers rarely close for works. Coring and cutting have to fit around the people inside.",
     sections: [
       { id: "plan-hours", heading: "Plan around people", paras: ["Agree work windows with operations from the start. The loudest tasks go into the quietest hours, and everyone affected knows what is happening and when."] },

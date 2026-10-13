@@ -37,7 +37,7 @@ export default function AboutPage() {
         kicker="ABOUT AL HADAF"
         title={<>Built on<br /><em>close attention.</em></>}
         intro="Since 2015 we have helped Dubai's building owners, consultants and contractors understand their concrete, and look after it properly."
-        image="/projects/warehouse-1.jpg"
+        image="/projects/warehouse-1.webp"
         crumbs={[{ href: "/", label: "Home" }, { label: "About" }]}
         meta={<>EST. 2015<br />DUBAI, UAE</>}
       />
@@ -52,8 +52,8 @@ export default function AboutPage() {
           <Link className="under-link" href="/projects">See the work <Arrow /></Link>
         </div>
         <div className="story-media" data-reveal>
-          <figure className="story-img-a"><img src={"/projects/coring-1.jpg"} alt="Coring and GPR scanning on site" loading="lazy" /></figure>
-          <figure className="story-img-b"><img src={"/projects/slab-1.jpg"} alt="Slab patch repair in progress" loading="lazy" /></figure>
+          <figure className="story-img-a"><img src={"/projects/coring-1.webp"} alt="Coring and GPR scanning on site" loading="lazy" /></figure>
+          <figure className="story-img-b"><img src={"/projects/slab-1.webp"} alt="Slab patch repair in progress" loading="lazy" /></figure>
           <div className="story-badge"><strong>10<sup>+</sup></strong><span>YEARS OF<br />RESTORATION</span></div>
         </div>
       </section>

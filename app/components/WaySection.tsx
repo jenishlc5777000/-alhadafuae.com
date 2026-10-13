@@ -7,9 +7,9 @@ import { img } from "../lib/content";
 const CYCLE = 3200;
 
 const principles = [
-  { title: "Investigate", tag: "SEE THE CONDITION", text: "Coring, GPR scanning and assessment show what is inside and what is wrong, before any work begins.", image: "/projects/coring-2.jpg" },
-  { title: "Repair", tag: "SOLVE THE CAUSE", text: "Patch repairs, corrosion treatment, crack injection and strengthening restore profile and performance.", image: "/projects/slab-1.jpg" },
-  { title: "Protect", tag: "BUILT TO LAST", text: "Waterproofing and epoxy systems give a durable, resilient finish for years to come.", image: "/projects/slab-5.jpg" },
+  { title: "Investigate", tag: "SEE THE CONDITION", text: "Coring, GPR scanning and assessment show what is inside and what is wrong, before any work begins.", image: "/projects/coring-2.webp" },
+  { title: "Repair", tag: "SOLVE THE CAUSE", text: "Patch repairs, corrosion treatment, crack injection and strengthening restore profile and performance.", image: "/projects/slab-1.webp" },
+  { title: "Protect", tag: "BUILT TO LAST", text: "Waterproofing and epoxy systems give a durable, resilient finish for years to come.", image: "/projects/slab-5.webp" },
 ];
 
 const statement = "Every job starts by understanding what is really happening in the concrete. We investigate first, repair with the right system, then protect the result, restoring strength, durability and finish.".split(" ");

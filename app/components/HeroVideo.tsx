@@ -2,8 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const scenes = [
-  { label: "FIELD", src: "/video1.mp4", poster: "/projects/quay-1.jpg" },
-  { label: "URBAN", src: "/video2.mp4", poster: "/projects/warehouse-1.jpg" },
+  { label: "FIELD", src: "/video1.mp4", poster: "/projects/quay-1.webp" },
+  { label: "URBAN", src: "/video2.mp4", poster: "/projects/warehouse-1.webp" },
 ];
 
 /** Plays each scene once, then auto-advances to the next; the user can switch at any time. */

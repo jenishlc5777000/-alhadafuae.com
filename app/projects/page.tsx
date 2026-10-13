@@ -19,7 +19,7 @@ export default function ProjectsPage() {
         kicker="SELECTED PROJECTS"
         title={<>Work that<br /><em>stands up.</em></>}
         intro="Quay walls, slabs, columns, warehouses and paving. Real work from our own sites, each one starting with a question about the concrete."
-        image="/projects/quay-1.jpg"
+        image="/projects/quay-1.webp"
         crumbs={[{ href: "/", label: "Home" }, { label: "Projects" }]}
         meta={<>{String(projects.length).padStart(2, "0")} PROJECTS<br />FROM OUR SITES</>}
       />
