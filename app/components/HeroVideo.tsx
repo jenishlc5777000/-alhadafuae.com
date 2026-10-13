@@ -1,17 +1,45 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const scenes = [
-  { label: "FIELD", src: "/watermarked_preview.mp4", poster: "/projects/quay-1.jpg" },
-  { label: "URBAN", src: "https://cdn.coverr.co/videos/coverr-construction-workers-in-the-city-hmisd9bkec/1080p.mp4", poster: "/projects/warehouse-1.jpg" },
+  { label: "FIELD", src: "/video1.mp4", poster: "/projects/quay-1.jpg" },
+  { label: "URBAN", src: "/video2.mp4", poster: "/projects/warehouse-1.jpg" },
 ];
 
+/** Plays each scene once, then auto-advances to the next; the user can switch at any time. */
 export default function HeroVideo() {
   const [scene, setScene] = useState(0);
+  const refs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    refs.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === scene) {
+        try { v.currentTime = 0; } catch { /* ignore seek errors on streaming sources */ }
+        v.play().catch(() => { /* autoplay may be blocked; the poster still shows */ });
+      } else {
+        v.pause();
+      }
+    });
+  }, [scene]);
+
+  const next = () => setScene((s) => (s + 1) % scenes.length);
+
   return (
     <>
       {scenes.map((s, i) => (
-        <video key={s.src} className={`hero-video${scene === i ? " visible" : ""}`} autoPlay muted loop playsInline preload={i === 0 ? "auto" : "none"} poster={s.poster} aria-hidden="true">
+        <video
+          key={s.src}
+          ref={(el) => { refs.current[i] = el; }}
+          className={`hero-video${scene === i ? " visible" : ""}`}
+          autoPlay={i === 0}
+          muted
+          playsInline
+          preload={i === 0 ? "auto" : "metadata"}
+          poster={s.poster}
+          aria-hidden="true"
+          onEnded={() => { if (scene === i) next(); }}
+        >
           <source src={s.src} type="video/mp4" />
         </video>
       ))}

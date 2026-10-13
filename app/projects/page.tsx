@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { CtaBand } from "../components/Cards";
 import { ProjectGallery } from "../components/Filterable";
 import PageHero from "../components/PageHero";
-import { images, projectCategories, projects } from "../lib/content";
+import PhotoWall from "../components/PhotoWall";
+import { projectCategories, projects } from "../lib/content";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -32,6 +33,7 @@ export default function ProjectsPage() {
         </div>
         <ProjectGallery projects={projects} categories={projectCategories} />
       </section>
+      <PhotoWall projects={projects} />
       <CtaBand title={<>Your building<br /><em>could be next.</em></>} text="Tell us what you are seeing on site. We will help you work out the right first step." />
     </>
   );
