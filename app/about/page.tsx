@@ -59,7 +59,7 @@ export default function AboutPage() {
       </section>
 
       <section className="stats-band" data-reveal>
-        <div><strong><span data-count="50">50</span>+</strong><span>PROJECTS DELIVERED</span></div>
+        <div><strong><span data-count="200">200</span>+</strong><span>PROJECTS DELIVERED</span></div>
         <div><strong><span data-count="10">10</span>+</strong><span>YEARS IN DUBAI</span></div>
         <div><strong><span data-count="6">6</span></strong><span>CORE SERVICES</span></div>
         <div><strong>24/7</strong><span>SUPPORT WHEN IT COUNTS</span></div>

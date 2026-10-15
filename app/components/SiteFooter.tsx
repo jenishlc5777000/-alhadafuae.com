@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Arrow, Brand } from "./Brand";
+import { Arrow, BrandStacked } from "./Brand";
 import { services, site, waLink } from "../lib/content";
 
 export default function SiteFooter() {
@@ -8,7 +8,7 @@ export default function SiteFooter() {
       <footer className="site-footer">
         <div className="footer-top">
           <div className="footer-brand">
-            <Brand />
+            <BrandStacked />
             <p>{site.address.join(" ")}</p>
           </div>
           <div>

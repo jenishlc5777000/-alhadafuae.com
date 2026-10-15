@@ -53,7 +53,7 @@ export default function Home() {
         </div>
         <div className="service-grid six" data-spotlight>
           {services.map((s) => (
-            <article className="service-card" key={s.n} data-reveal>
+            <article className="service-card" key={s.n} data-reveal style={{ "--card-image": `url(${s.image})` } as React.CSSProperties}>
               <div className="service-card-top"><span>{s.n}</span><Arrow /></div>
               <div><h3>{s.title}</h3><p>{s.text}</p></div>
               <div className="card-line" />

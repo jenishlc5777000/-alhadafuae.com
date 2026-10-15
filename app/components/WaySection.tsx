@@ -120,7 +120,7 @@ export default function WaySection() {
       </div>
 
       <div className="stat-row way-stats" data-reveal>
-        <div><strong><span data-count="50">50</span><sup>+</sup></strong><span>PROJECTS DELIVERED</span><i /></div>
+        <div><strong><span data-count="200">200</span><sup>+</sup></strong><span>PROJECTS DELIVERED</span><i /></div>
         <div><strong><span data-count="24">24</span><sup>/7</sup></strong><span>SUPPORT WHEN IT COUNTS</span><i /></div>
         <div><strong>0<span data-count="1">1</span></strong><span>TEAM, FROM SURVEY TO HANDOVER</span><i /></div>
       </div>

@@ -79,9 +79,10 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .site-header.is-menu-open { background: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none }
 .scroll-progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--red-bright); transform-origin: left; transform: scaleX(var(--progress, 0)); pointer-events: none }
 .brand { display: flex; align-items: center; gap: 11px; font-weight: 600; font-size: 16px; line-height: 1; letter-spacing: .13em; position: relative; z-index: 2 }
-.brand-logo { width: auto; height: 46px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35)); transition: transform .45s var(--ease) }
+.brand-logo { width: auto; height: 44px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35)); transition: transform .45s var(--ease) }
 .brand:hover .brand-logo { transform: scale(1.04) translateX(2px) }
-.footer-brand .brand-logo { height: 58px }
+.brand-stacked img { display: block; width: auto; height: 110px; object-fit: contain }
+.brand-stacked:hover img { transform: scale(1.03) }
 .main-nav { display: flex; align-items: center; gap: clamp(20px, 2.6vw, 38px) }
 .main-nav a { position: relative; font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 6px 0; opacity: .82; transition: opacity .2s }
 .main-nav a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%; background: var(--red-bright); transform: scaleX(0); transform-origin: right; transition: transform .45s var(--ease) }
@@ -176,17 +177,19 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .cap-top > p { color: #b8aca8; font-size: 14px; line-height: 1.7; margin: 0 }
 .service-grid { margin-top: 85px; border-top: 1px solid rgba(255, 255, 255, .26); display: grid; grid-template-columns: repeat(4, 1fr) }
 .service-card { min-height: 300px; padding: 19px 20px 22px; border-right: 1px solid rgba(255, 255, 255, .2); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; isolation: isolate; transition: color .4s }
-.service-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--red-soft); transform: scaleY(0); transform-origin: bottom; transition: transform .55s var(--ease) }
-.service-card:hover { color: #1a1413 }
-.service-card:hover::before { transform: scaleY(1) }
+/* Hover reveals a related project photo + a dark red gradient so title and body stay legible. */
+.service-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: var(--card-image, none), linear-gradient(180deg, rgba(10, 6, 5, .4), rgba(10, 6, 5, .78) 55%, rgba(10, 6, 5, .9)); background-size: cover, auto; background-position: center; background-blend-mode: multiply, normal; opacity: 0; transform: scale(1.05); transition: opacity .55s var(--ease), transform 1.1s var(--ease) }
+.service-card:hover::before { opacity: 1; transform: scale(1) }
+.service-card:hover h3 { color: #fff }
+.service-card:hover .arrow { transform: rotate(45deg); color: var(--red-bright) }
+.service-card:hover .service-card-top { color: #fff }
 .service-card:first-child { border-left: 1px solid rgba(255, 255, 255, .2) }
-.service-card-top { display: flex; justify-content: space-between; font: 10px var(--mono); letter-spacing: .1em }
-.service-card:hover .arrow { transform: rotate(45deg); color: var(--red) }
-.service-card h3 { font: 500 29px/1.05 var(--serif); margin: 0 0 12px; letter-spacing: -.02em }
+.service-card-top { display: flex; justify-content: space-between; font: 10px var(--mono); letter-spacing: .1em; transition: color .4s }
+.service-card h3 { font: 500 29px/1.05 var(--serif); margin: 0 0 12px; letter-spacing: -.02em; transition: color .4s }
 .service-card p { font-size: 12.5px; line-height: 1.6; margin: 0; color: #b4a8a4; transition: color .4s }
-.service-card:hover p { color: #4a3f3c }
-.card-line { height: 2px; width: 42px; background: var(--red); position: absolute; bottom: 0; left: 20px; transition: width .6s var(--ease) }
-.service-card:hover .card-line { width: calc(100% - 40px) }
+.service-card:hover p { color: #ece3df }
+.card-line { height: 2px; width: 42px; background: var(--red); position: absolute; bottom: 0; left: 20px; transition: width .6s var(--ease), background .4s }
+.service-card:hover .card-line { width: calc(100% - 40px); background: var(--red-bright) }
 
 /* ---------- Project cards ---------- */
 .work, .projects-index { padding: 135px var(--gutter) }
@@ -536,8 +539,8 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
   .header-cta { width: 44px; padding: 0; justify-content: center }
   .header-cta .arrow { line-height: 1; font-size: 17px }
   .brand { gap: 9px }
-  .brand-logo { height: 36px }
-  .footer-brand .brand-logo { height: 48px }
+  .brand-logo { height: 34px }
+  .brand-stacked img { height: 92px }
   .hero { min-height: 640px; max-height: none }
   .hero-content { transform: translateY(-36%) }
   .hero-title { font-size: clamp(48px, 14vw, 78px) }
@@ -836,7 +839,9 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .way:not(.is-pinned) .way-rail-bar i { animation: stepFill linear forwards }
 
 /* stats under the story */
-.way-stats { margin: 0 var(--gutter); padding-bottom: 30px; background: var(--stone) }
+/* Full-bleed opaque strip so no pinned background can bleed through on scroll */
+.way-stats { position: relative; z-index: 2; margin: 0; padding: 20px var(--gutter) 30px; background: var(--stone) }
+.way-stats::before { content: ""; position: absolute; z-index: -1; inset: 0; background: var(--stone) }
 .way-stats > div { position: relative; transition: background .4s }
 .way-stats > div:hover { background: rgba(212, 10, 22, .04) }
 .way-stats > div > i { position: absolute; left: 0; right: 25px; bottom: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease) }
@@ -940,12 +945,13 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
    ========================================================================== */
 /* Touch screens: no sticky hover fill after a tap */
 @media (hover: none) {
-  .service-card:hover { color: #fff }
-  .service-card:hover::before { transform: scaleY(0) }
+  /* Touch devices: no sticky image reveal after a tap */
+  .service-card:hover::before { opacity: 0; transform: scale(1.05) }
   .service-card:hover::after { opacity: 0 }
+  .service-card:hover h3, .service-card:hover .service-card-top { color: inherit }
   .service-card:hover p { color: #b4a8a4 }
   .service-card:hover .arrow { transform: none; color: inherit }
-  .service-card:hover .card-line { width: 42px }
+  .service-card:hover .card-line { width: 42px; background: var(--red) }
 }
 
 /* Tablet: tighter two-column cards */
