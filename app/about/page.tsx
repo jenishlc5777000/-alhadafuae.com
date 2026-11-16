@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow } from "../components/Brand";
 import { CtaBand, Ticker } from "../components/Cards";
-import LocationSection from "../components/LocationSection";
+// import LocationSection from "../components/LocationSection"; // re-enable once the new office is confirmed
 import PageHero from "../components/PageHero";
 import { img, images } from "../lib/content";
 
@@ -120,7 +120,7 @@ export default function AboutPage() {
 
       <CtaBand title={<>Not sure what<br /><em>you are looking at?</em></>} text="Send us photos or arrange a visit. We will tell you honestly whether it needs attention, and what kind." />
 
-      <LocationSection index="05" />
+      {/* <LocationSection index="05" /> — hidden until the new office location is confirmed */}
     </>
   );
 }

@@ -3,7 +3,7 @@ import { Arrow } from "./components/Brand";
 import { PostCard, ProjectCard, Ticker } from "./components/Cards";
 import HeroVideo from "./components/HeroVideo";
 import HowWeWork from "./components/HowWeWork";
-import LocationSection from "./components/LocationSection";
+// import LocationSection from "./components/LocationSection"; // re-enable once the new office is confirmed
 import WaySection from "./components/WaySection";
 import { Words } from "./components/Words";
 import { posts, projects, services } from "./lib/content";
@@ -19,14 +19,15 @@ export default function Home() {
         <div className="hero-index" aria-hidden="true">01 <i /> 06</div>
         <div className="hero-content">
           <p className="kicker light"><i />Specialist engineering services</p>
-          <h1 className="hero-title">
-            <span className="line"><span>CONCRETE</span></span>
-            <span className="line"><em>restoration,</em></span>
-            <span className="line"><span>done right.</span></span>
+          <h1 className="hero-title hero-title--statement">
+            <span className="line"><span>CONCRETE PROBLEMS<i className="dot" aria-hidden="true">.</i></span></span>
+            <span className="line"><span>ENGINEERING SOLUTIONS<i className="dot" aria-hidden="true">.</i></span></span>
           </h1>
-          <p className="hero-summary">Investigate. Repair. Protect. Purpose-built solutions for concrete structures, from first scan to final finish.</p>
+          <div className="hero-rule" aria-hidden="true" />
+          <p className="hero-promise">Investigate<i className="dot" aria-hidden="true">.</i> Repair<i className="dot" aria-hidden="true">.</i> Protect<i className="dot" aria-hidden="true">.</i></p>
+          <p className="hero-summary">Specialist concrete restoration, structural strengthening, waterproofing, coring and GPR scanning services across <span className="is-accent">Dubai<i className="dot" aria-hidden="true">.</i></span></p>
           <div className="hero-buttons">
-            <a className="button primary" href="#contact" data-magnetic><span>Request a site assessment</span> <Arrow /></a>
+            <a className="button primary" href="#contact" data-magnetic><span>Book a site inspection</span> <Arrow /></a>
             <a className="play-link" href="#process"><b>↓</b><span>See how we work</span></a>
           </div>
         </div>
@@ -108,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      <LocationSection index="06" />
+      {/* <LocationSection index="06" /> — hidden until the new office location is confirmed */}
     </>
   );
 }

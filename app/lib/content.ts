@@ -37,12 +37,12 @@ export const images = {
 };
 
 export const services = [
-  { n: "01", title: "Concrete Assessment", text: "Site-led review of cracks, corrosion, dampness and concrete condition to guide the right intervention.", image: "/projects/warehouse-3.webp" },
+  { n: "01", title: "Concrete Assessment", text: "Site-led review of cracks, corrosion, dampness and concrete condition to guide the right intervention.", image: "/projects/concrete-assessment.webp" },
   { n: "02", title: "Concrete Repair", text: "Patch repairs, corrosion treatment, crack injection and resurfacing to restore profile and performance.", image: "/projects/slab-3.webp" },
-  { n: "03", title: "Concrete Strengthening", text: "Concrete enlargement and steel jacketing to increase member capacity and strengthen existing structures.", image: "/projects/columns-1.webp" },
-  { n: "04", title: "Epoxy Systems", text: "Seamless epoxy floors, screeds, anti-slip and chemical-resistant coatings for a resilient finish.", image: "/projects/ceiling-1.webp" },
+  { n: "03", title: "Concrete Strengthening", text: "Concrete enlargement and steel jacketing to increase member capacity and strengthen existing structures.", image: "/projects/strengthening.webp" },
+  { n: "04", title: "Epoxy Systems", text: "Seamless epoxy floors, screeds, anti-slip and chemical-resistant coatings for a resilient finish.", image: "/projects/epoxy-2.webp" },
   { n: "05", title: "Coring & GPR Scanning", text: "Controlled core drilling and GPR scanning to understand what is inside before work begins.", image: "/projects/coring-1.webp" },
-  { n: "06", title: "Waterproofing", text: "Membrane, liquid-applied PU and cementitious systems for wet areas, tanks, basements and exposed surfaces.", image: "/projects/slab-4.webp" },
+  { n: "06", title: "Waterproofing", text: "Membrane, liquid-applied PU and cementitious systems for wet areas, tanks, basements and exposed surfaces.", image: "/projects/waterproofing.webp" },
 ] as const;
 
 export type Project = {
