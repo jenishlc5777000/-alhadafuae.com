@@ -139,7 +139,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .hero-title .line:nth-child(3) > * { animation-delay: .51s }
 .hero-title .line:nth-child(4) > * { animation-delay: .64s }
 .hero-title em { color: var(--red-bright); font-weight: 500; margin-left: 12.5vw }
-.hero-title--statement { font-family: var(--sans); font-size: clamp(34px, 4.2vw, 68px); font-weight: 800; letter-spacing: -.02em; line-height: .96; text-transform: uppercase; max-width: 20ch; color: #fff }
+.hero-title--statement { font-family: var(--sans); font-size: clamp(36px, 5.4vw, 86px); font-weight: 800; letter-spacing: -.025em; line-height: .95; text-transform: uppercase; max-width: 20ch; color: #fff }
 .hero-title--statement .line + .line + .line { margin-top: .15em }
 .hero-title--statement .dot { font-style: normal; color: var(--red-bright); display: inline; margin: 0 }
 /* First pair (CONCRETE / PROBLEMS.) in red; second pair (ENGINEERING / SOLUTIONS.) stays white */
@@ -565,7 +565,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
   .hero-content { transform: translateY(-36%) }
   .hero-title { font-size: clamp(48px, 14vw, 78px) }
   .hero-title em { margin-left: 7vw }
-  .hero-title--statement { font-size: clamp(28px, 7.4vw, 42px); max-width: none }
+  .hero-title--statement { font-size: clamp(36px, 10.5vw, 60px); max-width: none }
   .hero-rule { width: 56px; margin: 18px 0 14px }
   .hero-promise { font-size: 15.5px }
   .hero-summary { font-size: 14px; margin: 18px 0 26px }
