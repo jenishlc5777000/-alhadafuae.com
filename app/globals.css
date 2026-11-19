@@ -137,9 +137,14 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .hero-title .line:nth-child(1) > * { animation-delay: .25s }
 .hero-title .line:nth-child(2) > * { animation-delay: .38s }
 .hero-title .line:nth-child(3) > * { animation-delay: .51s }
+.hero-title .line:nth-child(4) > * { animation-delay: .64s }
 .hero-title em { color: var(--red-bright); font-weight: 500; margin-left: 12.5vw }
-.hero-title--statement { font-family: var(--sans); font-size: clamp(42px, 5.4vw, 86px); font-weight: 800; letter-spacing: -.02em; line-height: .92; text-transform: uppercase; max-width: 16ch }
+.hero-title--statement { font-family: var(--sans); font-size: clamp(40px, 5vw, 80px); font-weight: 800; letter-spacing: -.02em; line-height: .95; text-transform: uppercase; max-width: 20ch }
+.hero-title--statement .line + .line + .line { margin-top: .15em }
 .hero-title--statement .dot { font-style: normal; color: var(--red-bright); display: inline; margin: 0 }
+.hero-title--statement .is-accent { color: var(--red-bright); font-size: .78em; letter-spacing: -.015em; padding-left: .5em }
+.hero-title--statement .is-accent .dot { color: inherit }
+.hero-title--statement .line > .is-accent { animation-delay: inherit }
 .hero-summary .is-accent { color: var(--red-bright); font-weight: 500 }
 .hero-summary .is-accent .dot { color: inherit }
 .hero-rule { display: block; width: 72px; height: 2px; margin: 22px 0 18px; background: var(--red-bright) }
@@ -559,7 +564,8 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
   .hero-content { transform: translateY(-36%) }
   .hero-title { font-size: clamp(48px, 14vw, 78px) }
   .hero-title em { margin-left: 7vw }
-  .hero-title--statement { font-size: clamp(32px, 8.4vw, 48px); max-width: 12ch }
+  .hero-title--statement { font-size: clamp(32px, 8.4vw, 48px); max-width: none }
+  .hero-title--statement .is-accent { padding-left: .4em }
   .hero-rule { width: 56px; margin: 18px 0 14px }
   .hero-promise { font-size: 15.5px }
   .hero-summary { font-size: 14px; margin: 18px 0 26px }

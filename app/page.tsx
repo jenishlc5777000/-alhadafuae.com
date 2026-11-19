@@ -20,8 +20,10 @@ export default function Home() {
         <div className="hero-content">
           <p className="kicker light"><i />Specialist engineering services</p>
           <h1 className="hero-title hero-title--statement">
-            <span className="line"><span>CONCRETE PROBLEMS<i className="dot" aria-hidden="true">.</i></span></span>
-            <span className="line"><span>ENGINEERING SOLUTIONS<i className="dot" aria-hidden="true">.</i></span></span>
+            <span className="line"><span>CONCRETE</span></span>
+            <span className="line"><span className="is-accent">PROBLEMS<i className="dot" aria-hidden="true">.</i></span></span>
+            <span className="line"><span>ENGINEERING</span></span>
+            <span className="line"><span className="is-accent">SOLUTIONS<i className="dot" aria-hidden="true">.</i></span></span>
           </h1>
           <div className="hero-rule" aria-hidden="true" />
           <p className="hero-promise">Investigate<i className="dot" aria-hidden="true">.</i> Repair<i className="dot" aria-hidden="true">.</i> Protect<i className="dot" aria-hidden="true">.</i></p>
