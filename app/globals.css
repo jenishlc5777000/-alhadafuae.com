@@ -711,18 +711,18 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .is-active .hw-dot { background: var(--red); border-color: var(--red); animation: pulse 2.2s ease-out infinite }
 .hw-no { font: 9px var(--mono); letter-spacing: .12em; color: var(--muted); transition: color .3s }
 .is-active .hw-no { color: var(--red) }
-.hw-step strong { font: 500 clamp(19px, 1.6vw, 23px)/1.12 var(--serif); letter-spacing: -.02em; color: #a3958f; transition: color .3s, transform .5s var(--ease) }
+.hw-step strong { font: 700 clamp(15px, 1.25vw, 18px)/1.15 var(--sans); letter-spacing: -.005em; text-transform: uppercase; color: #a3958f; transition: color .3s, transform .5s var(--ease) }
 .hw-step:hover strong, .is-done strong { color: var(--ink) }
 .is-active strong { color: var(--ink); transform: translateX(4px) }
 .hw-panel { position: relative; display: grid; grid-template-columns: .5fr 1fr 1fr; gap: 4vw; align-items: center; min-height: 460px; margin-top: 46px; padding: 56px; background: var(--night); color: #fff; overflow: hidden; isolation: isolate }
 .hw-panel::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .07; background-image: linear-gradient(rgba(255, 255, 255, .6) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .6) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: linear-gradient(90deg, #000, transparent 70%); mask-image: linear-gradient(90deg, #000, transparent 70%) }
-.hw-num { font: 500 clamp(120px, 14vw, 230px)/.8 var(--serif); letter-spacing: -.08em; color: transparent; -webkit-text-stroke: 1.2px var(--red-bright); animation: numIn 1s var(--ease) both }
+.hw-num { font: 800 clamp(120px, 14vw, 230px)/.8 var(--sans); letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1.6px var(--red-bright); animation: numIn 1s var(--ease) both }
 .hw-copy > * { animation: fadeUp .8s var(--ease) both }
 .hw-copy > :nth-child(2) { animation-delay: .07s }
 .hw-copy > :nth-child(3) { animation-delay: .14s }
 .hw-copy > :nth-child(4) { animation-delay: .21s }
 .hw-copy > :nth-child(5) { animation-delay: .28s }
-.hw-copy h3 { font: 500 clamp(32px, 3.3vw, 50px)/1 var(--serif); letter-spacing: -.045em; margin: 0 0 16px }
+.hw-copy h3 { font: 800 clamp(26px, 2.8vw, 40px)/1.05 var(--sans); letter-spacing: -.02em; text-transform: uppercase; margin: 0 0 16px }
 .hw-copy > p:not(.kicker) { color: #cfc4c0; font-size: 15px; line-height: 1.7; margin: 0 0 22px; max-width: 420px }
 .hw-copy ul { list-style: none; margin: 0 0 30px; padding: 0; display: grid; gap: 10px }
 .hw-copy li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #ece3df }
