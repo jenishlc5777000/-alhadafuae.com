@@ -16,8 +16,11 @@
   --muted-light: #c7bcb8;
   --line: rgba(33, 28, 27, .15);
   --line-light: rgba(255, 255, 255, .2);
-  --serif: var(--font-serif), "Playfair Display", Georgia, serif;
   --sans: var(--font-sans), "DM Sans", system-ui, sans-serif;
+  /* Legacy serif variable now points at the sans stack so every title across
+     the site shares the hero's typography. Italic variants fall back to the
+     italic style of DM Sans. */
+  --serif: var(--sans);
   --mono: var(--font-mono), "DM Mono", ui-monospace, monospace;
   --gutter: 8vw;
   --edge: 4.2vw;
@@ -102,7 +105,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .mobile-panel::before { content: ""; position: absolute; inset: 0; opacity: .08; pointer-events: none; background-image: linear-gradient(rgba(255, 255, 255, .5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .5) 1px, transparent 1px); background-size: 60px 60px }
 .mobile-panel.is-open { clip-path: inset(0); visibility: visible; transition: clip-path .65s var(--ease) }
 .mobile-panel nav { display: grid; position: relative }
-.mobile-panel nav a { display: flex; align-items: baseline; gap: 18px; font: 500 clamp(38px, 10vw, 64px)/1.1 var(--serif); letter-spacing: -.04em; padding: 10px 0; border-bottom: 1px solid var(--line-light); opacity: 0; transform: translateY(24px); transition: opacity .5s, transform .6s var(--ease), color .2s }
+.mobile-panel nav a { display: flex; align-items: baseline; gap: 18px; font: 800 clamp(32px, 8.5vw, 52px)/1.1 var(--sans); letter-spacing: -.025em; text-transform: uppercase; padding: 10px 0; border-bottom: 1px solid var(--line-light); opacity: 0; transform: translateY(24px); transition: opacity .5s, transform .6s var(--ease), color .2s }
 .mobile-panel nav a span { font: 10px var(--mono); letter-spacing: .1em; color: var(--red-bright) }
 .mobile-panel nav a.is-active, .mobile-panel nav a:hover { color: var(--red-bright); font-style: italic }
 .mobile-panel.is-open nav a { opacity: 1; transform: none; transition-delay: calc(var(--i) * 60ms + .2s) }
@@ -164,7 +167,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .hero-signal { position: absolute; z-index: 2; right: var(--edge); bottom: 85px; width: 180px; border-left: 1px solid rgba(255, 255, 255, .48); padding-left: 15px; animation: fadeUp .9s var(--ease) both .65s }
 .pulse { display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--red-bright); box-shadow: 0 0 0 8px rgba(212, 10, 22, .15); margin-bottom: 22px; animation: pulse 2.2s ease-out infinite }
 .hero-signal p { font: 9px/1.5 var(--mono); letter-spacing: .1em; margin: 0 }
-.hero-signal strong { font: 500 48px var(--serif); display: block; margin: 11px 0 9px }
+.hero-signal strong { font: 800 40px/.95 var(--sans); letter-spacing: -.025em; display: block; margin: 11px 0 9px }
 .hero-signal strong small { font: 10px var(--mono); letter-spacing: .07em }
 .hero-signal > i { font: 8px/1.4 var(--mono); letter-spacing: .09em; color: #e4dad6; font-style: normal }
 .hero-bottom { position: absolute; z-index: 2; bottom: 28px; left: var(--edge); right: var(--edge); display: flex; justify-content: space-between; font: 9px var(--mono); letter-spacing: .11em; animation: fadeIn .8s ease both .9s }
@@ -255,7 +258,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .project-band:hover .project-image::after { transform: translateX(120%) }
 .image-label { position: absolute; top: 37px; left: 37px; color: #fff }
 .image-label span { font: 9px var(--mono); letter-spacing: .1em }
-.image-label strong { display: block; font: 500 24px/1 var(--serif); margin-top: 10px }
+.image-label strong { display: block; font: 800 20px/1.1 var(--sans); letter-spacing: -.01em; text-transform: uppercase; margin-top: 10px }
 .target { width: 115px; height: 115px; position: absolute; right: 12%; bottom: 13%; border: 1px solid rgba(255, 255, 255, .8); border-radius: 50%; display: grid; place-items: center; transition: transform .8s var(--ease) }
 .target::before, .target::after { content: ""; position: absolute; background: rgba(255, 255, 255, .8) }
 .target::before { width: 1px; height: 143px }
@@ -306,12 +309,12 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 
 /* ---------- Contact ---------- */
 .contact { position: relative; overflow: hidden; background: var(--night-2); color: #fff; padding: 122px var(--gutter); display: grid; grid-template-columns: 1fr 1fr; gap: 10vw }
-.contact-watermark { position: absolute; right: -1vw; top: -36px; font: 500 clamp(140px, 18vw, 260px)/.8 var(--serif); color: rgba(255, 255, 255, .035); letter-spacing: -.08em; pointer-events: none }
+.contact-watermark { position: absolute; right: -1vw; top: -36px; font: 800 clamp(140px, 18vw, 260px)/.8 var(--sans); color: rgba(255, 255, 255, .035); letter-spacing: -.04em; text-transform: uppercase; pointer-events: none }
 .contact .display { font-size: clamp(46px, 5vw, 78px); position: relative }
 .contact .display em { color: var(--red-bright) }
 .contact-intro > p:not(.kicker) { position: relative; color: #cfc4c0; line-height: 1.7; max-width: 340px }
 .contact-direct { position: relative; margin-top: 36px; display: grid; gap: 8px; justify-items: start }
-.contact-direct a { font: 500 clamp(18px, 1.6vw, 22px) var(--serif); background: linear-gradient(var(--red-bright), var(--red-bright)) left bottom / 0 1px no-repeat; transition: background-size .5s var(--ease), color .3s }
+.contact-direct a { font: 600 clamp(15px, 1.3vw, 19px) var(--sans); letter-spacing: -.005em; background: linear-gradient(var(--red-bright), var(--red-bright)) left bottom / 0 1px no-repeat; transition: background-size .5s var(--ease), color .3s }
 .contact-direct a:hover { background-size: 100% 1px; color: var(--red-bright) }
 .contact form { position: relative; display: grid; gap: 24px; align-content: start }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px }
@@ -331,7 +334,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .footer-brand p { max-width: 280px; margin-top: 18px; color: #a69a96 }
 .footer-brand .brand { color: #fff }
 .footer-label { display: block; font: 9px var(--mono); letter-spacing: .14em; color: var(--red-bright); margin-bottom: 8px }
-.footer-word { font: 500 clamp(64px, 16.5vw, 270px)/.78 var(--serif); letter-spacing: -.07em; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .14); white-space: nowrap; margin: 10px 0 30px; user-select: none }
+.footer-word { font: 800 clamp(64px, 16.5vw, 270px)/.78 var(--sans); letter-spacing: -.04em; text-transform: uppercase; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .14); white-space: nowrap; margin: 10px 0 30px; user-select: none }
 .footer-bottom { border-top: 1px solid rgba(255, 255, 255, .16); padding-top: 18px; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; font: 9px var(--mono); letter-spacing: .08em; color: #a69a96 }
 .footer-bottom a:hover { color: var(--red-bright) }
 .floating-wa { position: fixed; z-index: 40; right: 20px; bottom: 20px; background: var(--red); color: #fff; padding: 10px 13px; border-radius: 30px; display: flex; align-items: center; gap: 7px; box-shadow: 0 12px 26px rgba(0, 0, 0, .25); animation: float 3.4s ease-in-out infinite; transition: background .3s }
@@ -366,7 +369,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .story-img-a { aspect-ratio: 4 / 5; width: 82% }
 .story-img-b { position: absolute; right: 0; bottom: 0; width: 48%; aspect-ratio: 1; border: 8px solid var(--stone) }
 .story-badge { position: absolute; left: -24px; bottom: 40px; background: var(--red); color: #fff; padding: 18px 20px; display: flex; gap: 12px; align-items: center }
-.story-badge strong { font: 500 46px/1 var(--serif) }
+.story-badge strong { font: 800 40px/1 var(--sans); letter-spacing: -.025em }
 .story-badge sup { font-size: 18px }
 .story-badge span { font: 9px/1.5 var(--mono); letter-spacing: .12em }
 
@@ -463,7 +466,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .prose ul { margin: 0 0 22px; padding: 0; list-style: none }
 .prose ul li { position: relative; padding: 10px 0 10px 30px; border-bottom: 1px solid var(--line) }
 .prose ul li::before { content: ""; position: absolute; left: 0; top: 23px; width: 16px; height: 1px; background: var(--red) }
-.prose blockquote { margin: 34px 0; padding: 6px 0 6px 28px; border-left: 3px solid var(--red); font: italic 500 clamp(22px, 2.2vw, 30px)/1.35 var(--serif); color: var(--ink); letter-spacing: -.02em }
+.prose blockquote { margin: 34px 0; padding: 6px 0 6px 28px; border-left: 3px solid var(--red); font: 500 clamp(19px, 1.9vw, 24px)/1.4 var(--sans); color: var(--ink); letter-spacing: -.005em }
 .takeaways { margin: 50px 0 40px; background: var(--night); color: #fff; padding: 40px clamp(24px, 4vw, 48px) }
 .takeaways ul li { border-bottom-color: var(--line-light); color: #ece3df }
 .takeaways ul li::before { background: var(--red-bright) }
@@ -691,9 +694,9 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 
 /* Scroll-driven marquee */
 .scroll-marquee { padding: 30px 0 70px; overflow: hidden; background: var(--stone); user-select: none }
-.sm-row { white-space: nowrap; font: 500 clamp(64px, 10vw, 168px)/1.02 var(--serif); letter-spacing: -.055em; color: var(--ink) }
+.sm-row { white-space: nowrap; font: 800 clamp(48px, 7.5vw, 128px)/1.05 var(--sans); letter-spacing: -.03em; text-transform: uppercase; color: var(--ink) }
 .sm-row span { display: inline-block; translate: calc(var(--sx, 0) * -.45px) 0; will-change: translate }
-.sm-row.outline { color: transparent; -webkit-text-stroke: 1.2px var(--red); font-style: italic }
+.sm-row.outline { color: transparent; -webkit-text-stroke: 1.2px var(--red); font-style: normal }
 .sm-row.outline span { translate: calc(-50% + var(--sx, 0) * .45px) 0 }
 
 /* How we work — interactive process */
@@ -805,7 +808,7 @@ a:hover > .arrow, button:hover > .arrow { transform: translate(3px, -3px) }
 .way { position: relative; background: var(--stone); padding: 110px var(--gutter) 60px; overflow: hidden }
 .way::before { content: ""; position: absolute; left: var(--gutter); right: var(--gutter); top: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease) .1s }
 .way:has(.is-visible)::before { transform: scaleX(1) }
-.way::after { content: "INVESTIGATE. REPAIR. PROTECT."; position: absolute; z-index: 0; left: 0; right: 0; bottom: -2vw; white-space: nowrap; text-align: center; font: italic 500 clamp(80px, 14vw, 220px)/.8 var(--serif); letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 1px rgba(212, 10, 22, .12); pointer-events: none; user-select: none }
+.way::after { content: "INVESTIGATE. REPAIR. PROTECT."; position: absolute; z-index: 0; left: 0; right: 0; bottom: -2vw; white-space: nowrap; text-align: center; font: 800 clamp(70px, 12vw, 200px)/.8 var(--sans); letter-spacing: -.04em; text-transform: uppercase; color: transparent; -webkit-text-stroke: 1px rgba(212, 10, 22, .12); pointer-events: none; user-select: none }
 
 .way-head { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 6vw; align-items: end; margin-bottom: 70px }
 .way-label { display: flex; align-items: center; gap: 14px; margin: 0 0 24px; font: 10px var(--mono); letter-spacing: .14em; color: var(--muted) }
